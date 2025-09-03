@@ -1,8 +1,9 @@
-import { IUtente } from "./IUtente";
+import {IUtente} from "./IUtente";
+
 // Definisco l'interfaccia IMezzo per gestire i diversi mezzi noleggiabili
 
 //Proprietà di ciascun mezzo (quelle condivise da tutti i mezzi)
-interface IMezzo {
+export interface IMezzo {
   tipoMezzo: string; // "bici", "scooter", "monopattino"
   idMezzo: string; // ID univoco formato da numero random + tipo di mezzo
   stato: boolean; // true = disponibile, false = in uso

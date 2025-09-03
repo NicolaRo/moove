@@ -1,9 +1,7 @@
-import {IMezzo} from "./IMezzo.";
+import { IMezzo } from "./Imezzo";
 
 
-export interface IUtente extends utente {assegnaUtente(utente: utente): void;}
-
-interface utente {
+export interface IUtente {
     id: number;
     nome: string;
     cognome: string;
