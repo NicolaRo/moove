@@ -21,5 +21,10 @@
   "homepage": "https://github.com/NicolaRo/moove#readme",
   "devDependencies": {
     "typescript": "^5.9.2"
+  },
+  "compilerOptions": {
+    "verbatimModuleSyntax": false,
+    "module": "ESNext",
+    "target": "ES2020"
   }
 }

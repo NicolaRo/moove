@@ -8,24 +8,32 @@ export interface IUtente { //creo (ed esporto)  l'interfaccia IUtente
     eta: number;
     idUtente: string;
     email: string;
-    password: string;
     metodoDiPagamento: string;
 }
 
 class utente implements IUtente { // Creo la classe utente che implementa l'interfaccia IUtente
-    nome: string;
-    cognome: string;
-    eta: number;
-    idUtente: string;
-    email: string;
-    password: string;
-    metodoDiPagamento: string;
-    
+    nome!: string;
+    cognome!: string;
+    eta!: number;
+    idUtente!: string;
+    email!: string;
+    metodoDiPagamento!: string;
+
+        // Metodo per prenotare un mezzo
+        function prenotaMezzo () {
+            if (this.stato == false) {
+                console.log(`Il mezzo con ID ${this.idMezzo} è già in uso.`);
+            } else if (this.stato == true) {
+                console.log(`Il mezzo con ID ${this.idMezzo} è stato prenotato dall'utente ${this.nome}`);
+                this.stato = false; // Cambia lo stato del mezzo a non disponibile
+            }
+        }
+
     
     constructor (nome: string, eta: number) { // Costruttore della classe utente che richiede nome ed età come parametri obbligatori
-        this.nome = this.nome;
+        this.nome = nome;
         this.cognome = this.cognome;
-        this.eta = this.eta;
+        this.eta = eta;
         this.idUtente = Math.floor(Math.random() * 10000) + this.nome + this.cognome; // Genera un ID univoco formato da numero random + nome + cognome
         this.email = this.email;
         this.metodoDiPagamento = this.metodoDiPagamento;
