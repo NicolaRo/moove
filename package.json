@@ -1,0 +1,25 @@
+{
+  "name": "moove",
+  "version": "1.0.0",
+  "description": "sharing micromobility",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolaRo/moove.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolaRo/moove/issues"
+  },
+  "homepage": "https://github.com/NicolaRo/moove#readme",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
