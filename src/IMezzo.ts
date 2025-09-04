@@ -12,7 +12,7 @@ export interface IMezzo {
 //======================== VARIABILI tipo mezzo =======================================
 
 // Definisco le variabili per il tipo di mezzo
-type tipoMezzo = "bici" | "scooter" | "monopattino";
+tipoMezzo = "bici" | "scooter" | "monopattino";
 
 // Salvo la variabile tipo di mezzo per recuperarla in base alla scelta dell'utente.
 let mezzo: tipoMezzo; 
@@ -34,43 +34,18 @@ let stato = true || false; // Inizialmente il mezzo è disponibile
 stato: true || false; // Lo stato può essere true o false
 
 
-//================================= CLASSI ===================================
-// Creo le classi per implementare le caratteristiche delle interfacce dei diversi mezzi
-class bici implements IMezzo {
+//================================= CLASSE ===================================
+// Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
+class Mezzo implements IMezzo {
   tipoMezzo: string;
   idMezzo: string;
   stato: boolean;
-
-  constructor() {
-    this.tipoMezzo = "bici"; // Tipo di mezzo
-    this.idMezzo = `${Math.floor(Math.random() * 10000)}-${this.tipoMezzo}`; // Genera un ID univoco composto da un numero random + "bike"
-    this.stato = true || false; // Inizialmente il mezzo
-  }
+  constructor (tipo: string) { 
+    this.tipoMezzo = tipo; 
+    this.idMezzo = `${Math.floor(Math.random() * 10000)}-${this.tipoMezzo}`; 
+    this.stato = true; 
+  } 
 }
-
-class scooter implements IMezzo {
-  tipoMezzo: string = "scooter";
-  idMezzo: string = idMezzo + "scooter";
-  stato: boolean;
-
-  constructor(){
-    this.tipoMezzo = "scooter"; // Tipo di mezzo
-    this.idMezzo = `${Math.floor(Math.random() * 10000)} + ${this.tipoMezzo}`; // Genera un ID univoco composto da un numero random + "bike"
-    this.stato = true || false; // Inizialmente il mezzo
-  }
-}
-
-class monopattino implements IMezzo {
-  tipoMezzo: string = "monopattino";
-  idMezzo: string = idMezzo + "monopattino";
-  stato: boolean;
-
-  constructor(){
-    this.tipoMezzo = "monopattino"; // Tipo di mezzo
-    this.idMezzo = `${Math.floor(Math.random() * 10000)} + ${this.tipoMezzo}`; // Genera un ID univoco composto da un numero random + "bike"
-    this.stato = true || false; // Inizialmente il mezzo
-  }
-
 
   //============================== METODO ===============================
 
