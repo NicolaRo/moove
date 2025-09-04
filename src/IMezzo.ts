@@ -18,8 +18,8 @@ class Mezzo implements IMezzo {
     this.tipoMezzo = tipo; 
     this.idMezzo = `${Math.floor(Math.random() * 10000)}-${this.tipoMezzo}`; 
     this.stato = true;
+    console.log("Mezzo creato:", this);
   } 
-  console.log(`Mezzo creato: ${this.tipoMezzo}, ID: ${this.idMezzo}, Stato: ${this.stato}`);
 }
 //======================== CREO I MEZZI =======================================
 
@@ -46,7 +46,7 @@ stato: true || false; // Lo stato può essere true o false
 
 /
 
-  //============================== METODO ===============================
+  /* //============================== METODO ===============================
 
   // Creo un metodo per assegnare un mezzo ad un utente
   assegnaUtente(utente: IUtente): void {
@@ -60,4 +60,4 @@ stato: true || false; // Lo stato può essere true o false
             console.log(`Il mezzo ${this.idMezzo} è stato assegnato all'utente ${utente.nome}`);
         }
     }
-}
+} */
