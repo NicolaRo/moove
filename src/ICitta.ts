@@ -1,16 +1,18 @@
-import { IMezzo } from "./IMezzo";
-interface citta {
-    nome: string;
-    elencoMezzi: string[];
+import {(IMezzo[])} from "./IMezzo"
+
+export interface ICitta {
+    nomeCitta: string;
+    mezziDisponibili : [""];
 }
 
-class citta implements citta {
-    nome: string;
-    elencoMezzi: string[];
-
-    constructor(nome: string) {
-        this.nome = Ferrara;
-        this.elencoMezzi = ["scooter", "bici", "monopattino"];
+// ========================= CREO LA CLASSE PER LE 20 CITTÁ
+ export class Citta implements ICitta {
+    nomeCitta: string;
+    mezziDisponibili: [];
+    constructor () {
+        this.nomeCitta = "Milano";
+        this.mezziDisponibili = IMezzo;
     }
-}
-aggiungIMezzo(mezzo: IMezzo): void;
+} 
+
+console.log ({mezziDisponibili})

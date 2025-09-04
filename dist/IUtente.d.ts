@@ -1,11 +1,14 @@
-import { IMezzo } from "./Imezzo";
 export interface IUtente {
     nome: string;
     cognome: string;
-    eta: number;
-    idUtente: string;
     email: string;
-    metodoDiPagamento: string;
+    metodoPagamento: string;
 }
-export declare function prenotaMezzo(mezzo: IMezzo): void;
+export declare class Utente implements IUtente {
+    nome: string;
+    cognome: string;
+    email: string;
+    metodoPagamento: string;
+    constructor(nome: string, cognome: string, email: string, metodoPagamento: string);
+}
 //# sourceMappingURL=IUtente.d.ts.map

@@ -1,13 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class citta {
-    nome;
-    elencoMezzi;
-    constructor(nome) {
-        this.nome = Ferrara;
-        this.elencoMezzi = ["scooter", "bici", "monopattino"];
+from;
+"./IMezzo";
+// ========================= CREO LA CLASSE PER LE 20 CITTÁ
+export class Citta {
+    constructor() {
+        this.nomeCitta = "Milano";
+        this.mezziDisponibili = IMezzo;
     }
 }
-aggiungIMezzo(mezzo, IMezzo_1.IMezzo);
-void ;
+console.log({ mezziDisponibili });
 //# sourceMappingURL=ICitta.js.map
