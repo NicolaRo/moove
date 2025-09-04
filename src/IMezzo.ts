@@ -8,14 +8,24 @@ export interface IMezzo {
   idMezzo: string; // ID univoco formato da numero random + tipo di mezzo
   stato: boolean; // true = disponibile, false = in uso
 }
+//================================= CLASSE ===================================
+// Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
+class Mezzo implements IMezzo {
+  tipoMezzo: string;
+  idMezzo: string;
+  stato: boolean;
+  constructor (tipo: string) { 
+    this.tipoMezzo = tipo; 
+    this.idMezzo = `${Math.floor(Math.random() * 10000)}-${this.tipoMezzo}`; 
+    this.stato = true;
+  } 
+  console.log(`Mezzo creato: ${this.tipoMezzo}, ID: ${this.idMezzo}, Stato: ${this.stato}`);
+}
+//======================== CREO I MEZZI =======================================
 
-//======================== VARIABILI tipo mezzo =======================================
-
-// Definisco le variabili per il tipo di mezzo
-tipoMezzo = "bici" | "scooter" | "monopattino";
-
-// Salvo la variabile tipo di mezzo per recuperarla in base alla scelta dell'utente.
-let mezzo: tipoMezzo; 
+let bicicletta = new Mezzo("bicicletta");
+let monopattino = new Mezzo("monopattino");
+let scooter = new Mezzo("scooter");
 
 //============================== FUNZIONE ==============================================
 
@@ -34,18 +44,7 @@ let stato = true || false; // Inizialmente il mezzo è disponibile
 stato: true || false; // Lo stato può essere true o false
 
 
-//================================= CLASSE ===================================
-// Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
-class Mezzo implements IMezzo {
-  tipoMezzo: string;
-  idMezzo: string;
-  stato: boolean;
-  constructor (tipo: string) { 
-    this.tipoMezzo = tipo; 
-    this.idMezzo = `${Math.floor(Math.random() * 10000)}-${this.tipoMezzo}`; 
-    this.stato = true; 
-  } 
-}
+/
 
   //============================== METODO ===============================
 
