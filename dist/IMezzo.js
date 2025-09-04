@@ -1,60 +1,63 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // Salvo la variabile tipo di mezzo per recuperarla in base alla scelta dell'utente.
-var mezzo;
+let mezzo;
 //============================== FUNZIONE ==============================================
 // Creo una funzione per generare un ID univoco per ogni mezzo
 function IdMezzoUnivoco(idMezzo) {
     return Math.floor(Math.random() * 10000) + idMezzo; // Genera un ID univoco composto da un numero random + tipo di mezzo
 }
 // Salvo l'Id del mezzo generato nella variabile.
-var idMezzo = "";
+let idMezzo = "";
 //================================= VARIABILI stato mezzo ===============================
 // Definisco lo stato del mezzo creando una variabile che contenga il suo stato corrente
-var stato = true || false; // Inizialmente il mezzo è disponibile
+let stato = true || false; // Inizialmente il mezzo è disponibile
 stato: true || false; // Lo stato può essere true o false
 //================================= CLASSI ===================================
 // Creo le classi per implementare le caratteristiche delle interfacce dei diversi mezzi
-var bici = /** @class */ (function () {
-    function bici() {
+class bici {
+    tipoMezzo;
+    idMezzo;
+    stato;
+    constructor() {
         this.tipoMezzo = "bici"; // Tipo di mezzo
-        this.idMezzo = "".concat(Math.floor(Math.random() * 10000), " + ").concat(this.tipoMezzo); // Genera un ID univoco composto da un numero random + "bike"
+        this.idMezzo = `${Math.floor(Math.random() * 10000)}-${this.tipoMezzo}`; // Genera un ID univoco composto da un numero random + "bike"
         this.stato = true || false; // Inizialmente il mezzo
     }
-    return bici;
-}());
-var scooter = /** @class */ (function () {
-    function scooter() {
-        this.tipoMezzo = "scooter";
-        this.idMezzo = idMezzo + "scooter";
+}
+class scooter {
+    tipoMezzo = "scooter";
+    idMezzo = idMezzo + "scooter";
+    stato;
+    constructor() {
         this.tipoMezzo = "scooter"; // Tipo di mezzo
-        this.idMezzo = "".concat(Math.floor(Math.random() * 10000), " + ").concat(this.tipoMezzo); // Genera un ID univoco composto da un numero random + "bike"
+        this.idMezzo = `${Math.floor(Math.random() * 10000)} + ${this.tipoMezzo}`; // Genera un ID univoco composto da un numero random + "bike"
         this.stato = true || false; // Inizialmente il mezzo
     }
-    return scooter;
-}());
-var monopattino = /** @class */ (function () {
-    function monopattino() {
-        this.tipoMezzo = "monopattino";
-        this.idMezzo = idMezzo + "monopattino";
+}
+class monopattino {
+    tipoMezzo = "monopattino";
+    idMezzo = idMezzo + "monopattino";
+    stato;
+    constructor() {
         this.tipoMezzo = "monopattino"; // Tipo di mezzo
-        this.idMezzo = "".concat(Math.floor(Math.random() * 10000), " + ").concat(this.tipoMezzo); // Genera un ID univoco composto da un numero random + "bike"
+        this.idMezzo = `${Math.floor(Math.random() * 10000)} + ${this.tipoMezzo}`; // Genera un ID univoco composto da un numero random + "bike"
         this.stato = true || false; // Inizialmente il mezzo
     }
     //============================== METODO ===============================
     // Creo un metodo per assegnare un mezzo ad un utente
-    monopattino.prototype.assegnaUtente = function (utente) {
+    assegnaUtente(utente) {
         if (!this.stato) {
             alert("Il mezzo non è disponibile.");
         }
         else if (this.stato) {
             this.stato = false; // Nel caso il mezzo non fosse disponibile
-            console.log("Il mezzo ".concat(this.idMezzo, " non \u00E8 disponibile"));
+            console.log(`Il mezzo ${this.idMezzo} non è disponibile`);
         }
         else {
             this.stato = true; // Nel caso il mezzo fosse disponibile
-            console.log("Il mezzo ".concat(this.idMezzo, " \u00E8 stato assegnato all'utente ").concat(utente.nome));
+            console.log(`Il mezzo ${this.idMezzo} è stato assegnato all'utente ${utente.nome}`);
         }
-    };
-    return monopattino;
-}());
+    }
+}
+//# sourceMappingURL=IMezzo.js.map

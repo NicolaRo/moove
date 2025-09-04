@@ -1,19 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.prenotaMezzo = prenotaMezzo;
-var IUtente = ""; // Salvo la variabile utente per recuperarla in base alla registrazione dell'utente.
-var utente = /** @class */ (function () {
-    function utente() {
-    }
-    return utente;
-}());
+let IUtente = ""; // Salvo la variabile utente per recuperarla in base alla registrazione dell'utente.
+class utente {
+    nome;
+    cognome;
+    eta;
+    idUtente;
+    email;
+    metodoDiPagamento;
+}
 // Metodo per prenotare un mezzo
 function prenotaMezzo() {
     if (this.stato == false) {
-        console.log("Il mezzo con ID ".concat(this.idMezzo, " \u00E8 gi\u00E0 in uso."));
+        console.log(`Il mezzo con ID ${this.idMezzo} è già in uso.`);
     }
     else if (this.stato == true) {
-        console.log("Il mezzo con ID ".concat(this.idMezzo, " \u00E8 stato prenotato dall'utente ").concat(this.nome));
+        console.log(`Il mezzo con ID ${this.idMezzo} è stato prenotato dall'utente ${this.nome}`);
         this.stato = false; // Cambia lo stato del mezzo a non disponibile
     }
 }
@@ -27,5 +30,6 @@ constructor(nome, string, eta, number);
     this.metodoDiPagamento = this.metodoDiPagamento;
 }
 function prenotaMezzo(mezzo) {
-    console.log("L'utente ".concat(IUtente, " ha prenotato il mezzo con ID ").concat(mezzo.idMezzo));
+    console.log(`L'utente ${IUtente} ha prenotato il mezzo con ID ${mezzo.idMezzo}`);
 }
+//# sourceMappingURL=IUtente.js.map
