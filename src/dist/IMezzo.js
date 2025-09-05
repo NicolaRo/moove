@@ -11,8 +11,12 @@ export class Mezzo {
     assegnaUtente(Utente) {
         console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
     }
+    assegnaMezzo(Mezzo) {
+        console.log("assegna mezzo all'utente");
+    }
 }
 Mezzo.contatore = 0;
+//======================== IMPORTO L'UTENTE =======================================
 import { utente1 } from "./IUtente.js";
 //======================== CREO I MEZZI =======================================
 let bicicletta = new Mezzo("bicicletta");
@@ -20,5 +24,4 @@ let monopattino = new Mezzo("monopattino");
 let scooter = new Mezzo("scooter");
 //======================== ASSEGNO L'UTENTE =======================================
 bicicletta.assegnaUtente(utente1);
-//======================== IMPORTO L'UTENTE =======================================
 //# sourceMappingURL=IMezzo.js.map

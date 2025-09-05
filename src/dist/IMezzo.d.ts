@@ -11,5 +11,6 @@ export declare class Mezzo implements IMezzo {
     private static contatore;
     constructor(tipo: string);
     assegnaUtente(Utente: Utente): void;
+    assegnaMezzo(Mezzo: Mezzo): void;
 }
 //# sourceMappingURL=IMezzo.d.ts.map

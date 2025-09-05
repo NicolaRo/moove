@@ -27,9 +27,13 @@ export class Mezzo implements IMezzo {
   assegnaUtente (Utente:Utente ): void {
     console.log ("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
     }
+
+    assegnaMezzo (Mezzo:Mezzo): void {
+      console.log ("assegna mezzo all'utente")
+    }
 } 
 
-
+//======================== IMPORTO L'UTENTE =======================================
 import {utente1} from "./IUtente.js"
 
 //======================== CREO I MEZZI =======================================
@@ -43,4 +47,4 @@ let scooter = new Mezzo("scooter");
 //======================== ASSEGNO L'UTENTE =======================================
 bicicletta.assegnaUtente(utente1);
 
-//======================== IMPORTO L'UTENTE =======================================
+

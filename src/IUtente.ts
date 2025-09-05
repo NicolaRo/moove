@@ -1,5 +1,4 @@
 import {Mezzo} from "./dist/IMezzo.js"
-
 //================================= CLASSE ===================================
 export interface IUtente {
     nome: string;
@@ -23,12 +22,26 @@ export interface IUtente {
         this.metodoPagamento = metodoPagamento;
         }
         prenotaMezzo(mezzo: Mezzo): void {
-          console.log ("l'utente", {Utente}, "ha prenotato il mezzo:", {Mezzo})
+          if (mezzo.stato === true) {
+            console.log ("l'utente", (this.nome), "ha prenotato il mezzo:", (mezzo.idMezzo));
+          } else {
+            mezzo.stato === false;
+            console.log("Il mezzo", mezzo.idMezzo, "non è disponibile");
+          }
         }
-    } 
+        
+      }
+
+  
   //======================== CREO L'UTENTE =======================================
   
   let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
     console.log(utente1);
 
-    export {utente1}; 
+ export {utente1}; 
+
+ //======================== METODO =======================================
+
+
+
+   
