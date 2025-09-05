@@ -1,8 +1,8 @@
-import {(IMezzo[])} from "./IMezzo"
+import {IMezzo} from "./dist/IMezzo.js"
 
 export interface ICitta {
     nomeCitta: string;
-    mezziDisponibili : [""];
+    mezziDisponibili : [];
 }
 
 // ========================= CREO LA CLASSE PER LE 20 CITTÁ
@@ -11,8 +11,13 @@ export interface ICitta {
     mezziDisponibili: [];
     constructor () {
         this.nomeCitta = "Milano";
-        this.mezziDisponibili = IMezzo;
+        this.mezziDisponibili = [];
     }
+
+    aggiungiMezzo(mezzo: IMezzo): void{
+        console.log (this.mezziDisponibili);
+    }
+    
 } 
 
-console.log ({mezziDisponibili})
+

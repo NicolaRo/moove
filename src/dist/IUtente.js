@@ -1,3 +1,4 @@
+import { Mezzo } from "./dist/IMezzo.js";
 //================================= CLASSE ===================================
 // Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 export class Utente {
@@ -6,6 +7,9 @@ export class Utente {
         this.cognome = cognome;
         this.email = email;
         this.metodoPagamento = metodoPagamento;
+    }
+    prenotaMezzo(mezzo) {
+        console.log("l'utente", { Utente }, "ha prenotato il mezzo:", { Mezzo });
     }
 }
 //======================== CREO L'UTENTE =======================================

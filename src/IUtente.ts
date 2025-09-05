@@ -1,4 +1,4 @@
-
+import {Mezzo} from "./dist/IMezzo.js"
 
 //================================= CLASSE ===================================
 export interface IUtente {
@@ -21,6 +21,9 @@ export interface IUtente {
         this.cognome = cognome;
         this.email = email;
         this.metodoPagamento = metodoPagamento;
+        }
+        prenotaMezzo(mezzo: Mezzo): void {
+          console.log ("l'utente", {Utente}, "ha prenotato il mezzo:", {Mezzo})
         }
     } 
   //======================== CREO L'UTENTE =======================================
