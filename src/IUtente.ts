@@ -23,8 +23,9 @@ export interface IUtente {
         this.metodoPagamento = metodoPagamento;
         }
     } 
-  
   //======================== CREO L'UTENTE =======================================
   
   let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
     console.log(utente1);
+
+    export {utente1}; 

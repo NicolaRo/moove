@@ -1,5 +1,5 @@
 //======================== IMPORTO LE INTERFACCE ESTERNE =======================================
-import (Utente[]) from "./IUtente"
+import {Utente} from "./dist/IUtente.js"
 
 //======================== INTERFACCIA =======================================
 // Definisco l'interfaccia IMezzo per gestire i diversi mezzi noleggiabili
@@ -24,14 +24,13 @@ export class Mezzo implements IMezzo {
     this.stato = true;
     console.log("Mezzo creato:", this);
   } 
-
-private assegnaUtente (): void; {
-      return alert "il mezzo:"${Mezzo}, "è stato assegnato a:" ${utente};
+  assegnaUtente (Utente:Utente ): void {
+    console.log ("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
     }
 } 
 
 
-
+import {utente1} from "./IUtente.js"
 
 //======================== CREO I MEZZI =======================================
 
@@ -42,6 +41,6 @@ let monopattino = new Mezzo("monopattino");
 let scooter = new Mezzo("scooter");
 
 //======================== ASSEGNO L'UTENTE =======================================
-
+bicicletta.assegnaUtente(utente1);
 
 //======================== IMPORTO L'UTENTE =======================================

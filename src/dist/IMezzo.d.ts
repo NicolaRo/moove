@@ -1,3 +1,4 @@
+import { Utente } from "./dist/IUtente.js";
 export interface IMezzo {
     tipoMezzo: string;
     idMezzo: string;
@@ -9,6 +10,6 @@ export declare class Mezzo implements IMezzo {
     stato: boolean;
     private static contatore;
     constructor(tipo: string);
-    private assegnaUtente;
+    assegnaUtente(Utente: Utente): void;
 }
 //# sourceMappingURL=IMezzo.d.ts.map

@@ -1,7 +1,3 @@
-//======================== IMPORTO LE INTERFACCE ESTERNE =======================================
-import(Utente[]);
-from;
-"./IUtente";
 //================================= CLASSE ===================================
 // Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 export class Mezzo {
@@ -12,26 +8,17 @@ export class Mezzo {
         this.stato = true;
         console.log("Mezzo creato:", this);
     }
+    assegnaUtente(Utente) {
+        console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
+    }
 }
 Mezzo.contatore = 0;
-{
-    return alert;
-    "il mezzo:";
-    $;
-    {
-        Mezzo;
-    }
-    "è stato assegnato a:";
-    $;
-    {
-        utente;
-    }
-    ;
-}
+import { utente1 } from "./IUtente.js";
 //======================== CREO I MEZZI =======================================
 let bicicletta = new Mezzo("bicicletta");
 let monopattino = new Mezzo("monopattino");
 let scooter = new Mezzo("scooter");
 //======================== ASSEGNO L'UTENTE =======================================
+bicicletta.assegnaUtente(utente1);
 //======================== IMPORTO L'UTENTE =======================================
 //# sourceMappingURL=IMezzo.js.map
