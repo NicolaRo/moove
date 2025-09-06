@@ -1,13 +1,13 @@
 //======================== IMPORTO LE INTERFACCE ESTERNE =======================================
-import {Utente} from "./dist/IUtente.js"
+import { Utente } from "./IUtente.js";
 
 //======================== INTERFACCIA =======================================
 // Definisco l'interfaccia IMezzo per gestire i diversi mezzi noleggiabili
 //Elenco le proprietà di ciascun mezzo (quelle proprie e condivise da tutti i mezzi)
 export interface IMezzo {
   tipoMezzo: string; // "bici", "scooter", "monopattino"
-  idMezzo: string; // ID univoco formato da numero random + tipo di mezzo
-  stato: boolean; // true = disponibile, false = in uso
+  idMezzo: string; // ID univoco formato da numero progressivo + tipo di mezzo
+  statoMezzo: boolean; // true = disponibile, false = in uso
 }
 
 //================================= CLASSE ===================================
@@ -15,36 +15,30 @@ export interface IMezzo {
 export class Mezzo implements IMezzo {
   tipoMezzo: string;
   idMezzo: string;
-  stato: boolean;
+  statoMezzo: boolean;
   private static contatore = 0;
-  constructor (tipo: string) { 
+  constructor(tipo: string) {
     Mezzo.contatore++;
-    this.tipoMezzo = tipo; 
-    this.idMezzo = `${tipo}-${Mezzo.contatore.toString().padStart(3, '0')}`; 
-    this.stato = true;
+    this.tipoMezzo = tipo;
+    this.idMezzo = `${tipo}-${Mezzo.contatore.toString().padStart(3, "0")}`;
+    this.statoMezzo = true;
     console.log("Mezzo creato:", this);
-  } 
-  assegnaUtente (Utente:Utente ): void {
-    console.log ("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
-    }
-
-    assegnaMezzo (Mezzo:Mezzo): void {
-      console.log ("assegna mezzo all'utente")
-    }
-} 
-
-//======================== IMPORTO L'UTENTE =======================================
-import {utente1} from "./IUtente.js"
+  }
+  assegnaUtente(Utente: Utente): void {
+    console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
+  }
+}
 
 //======================== CREO I MEZZI =======================================
 
-let bicicletta = new Mezzo("bicicletta");
+export let bicicletta = new Mezzo("bicicletta");
 
-let monopattino = new Mezzo("monopattino");
+console.log("il mezzo", bicicletta.idMezzo, "è stato creato");
 
-let scooter = new Mezzo("scooter");
+export let monopattino = new Mezzo("monopattino");
 
-//======================== ASSEGNO L'UTENTE =======================================
-bicicletta.assegnaUtente(utente1);
+console.log("il mezzo", monopattino.idMezzo, "è stato creato");
 
+export let scooter = new Mezzo("scooter");
 
+console.log("il mezzo", scooter.idMezzo, "è stato creato");

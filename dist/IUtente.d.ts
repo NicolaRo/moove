@@ -1,4 +1,4 @@
-import { Mezzo } from "./dist/IMezzo.js";
+import { Mezzo } from "./IMezzo.js";
 export interface IUtente {
     nome: string;
     cognome: string;
@@ -13,6 +13,7 @@ export declare class Utente implements IUtente {
     constructor(nome: string, cognome: string, email: string, metodoPagamento: string);
     prenotaMezzo(mezzo: Mezzo): void;
 }
-declare let utente1: Utente;
-export { utente1 };
+export declare let utente1: Utente;
+export declare let utente2: Utente;
+export declare let utente3: Utente;
 //# sourceMappingURL=IUtente.d.ts.map

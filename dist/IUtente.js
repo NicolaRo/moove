@@ -8,18 +8,20 @@ export class Utente {
         this.metodoPagamento = metodoPagamento;
     }
     prenotaMezzo(mezzo) {
-        if (mezzo.stato === true) {
-            console.log("l'utente", (this.nome), "ha prenotato il mezzo:", (mezzo.idMezzo));
+        if (mezzo.statoMezzo === true) {
+            console.log(mezzo.statoMezzo);
+            mezzo.statoMezzo = false;
+            console.log("l'utente", this.nome, "ha prenotato il mezzo:", mezzo.idMezzo);
         }
         else {
-            mezzo.stato === false;
+            mezzo.statoMezzo === false;
             console.log("Il mezzo", mezzo.idMezzo, "non è disponibile");
         }
     }
 }
 //======================== CREO L'UTENTE =======================================
-let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
-console.log(utente1);
-export { utente1 };
-//======================== METODO =======================================
+export let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
+export let utente2 = new Utente("Francesco", "Gallo", "f.gallo@email.com", "paypal");
+export let utente3 = new Utente("Giovanni", "Renesto", "gionesto@email.com", "apple pay");
+console.log((utente1), (utente2), (utente3));
 //# sourceMappingURL=IUtente.js.map
