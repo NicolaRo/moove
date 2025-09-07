@@ -5,7 +5,7 @@ export interface ICitta {
 export declare class Citta implements ICitta {
     nomeCitta: string;
     mezziDisponibili: IMezzo[];
-    constructor();
+    constructor(nomeCitta: string, mezziDisponibili?: IMezzo[]);
     aggiungiMezzo(mezzo: IMezzo): void;
 }
 export declare let milano: Citta;

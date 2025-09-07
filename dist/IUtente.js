@@ -1,4 +1,4 @@
-//================================= CLASSE ===================================
+//================================= CREO LA CLASSE PER L'UTENTE' ===================================
 // Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 export class Utente {
     constructor(nome, cognome, email, metodoPagamento) {

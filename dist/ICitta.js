@@ -1,40 +1,43 @@
 // ========================= CREO LA CLASSE PER LE CITTÁ =======================================
 export class Citta {
-    constructor() {
-        this.nomeCitta = "Milano";
-        this.mezziDisponibili = [];
+    constructor(nomeCitta, mezziDisponibili = []) {
+        this.nomeCitta = nomeCitta;
+        this.mezziDisponibili = [...mezziDisponibili];
+        console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili);
     }
     aggiungiMezzo(mezzo) {
         if (mezzo.statoMezzo === true) {
             console.log("in", this.nomeCitta, "sono disponibili", this.mezziDisponibili);
+            mezzo.statoMezzo = false;
         }
         else {
-            mezzo.statoMezzo = false;
-            console.log("Il mezzo", mezzo.idMezzo, "non è disponibile");
+            mezzo.statoMezzo = true;
+            console.log("il mezzo", mezzo.idMezzo, "non è disponibile");
         }
     }
 }
 //======================== CREO LA CITTÁ =======================================
-export let milano = new Citta();
-export let roma = new Citta();
-export let torino = new Citta();
-export let napoli = new Citta();
-export let firenze = new Citta();
-export let bologna = new Citta();
-export let venezia = new Citta();
-export let verona = new Citta();
-export let genova = new Citta();
-export let palermo = new Citta();
-export let catania = new Citta();
-export let bari = new Citta();
-export let lecce = new Citta();
-export let ancona = new Citta();
-export let perugia = new Citta();
-export let pescara = new Citta();
-export let ferrara = new Citta();
-export let trento = new Citta();
-export let bolzano = new Citta();
-export let catanzaro = new Citta();
-export let reggioCalabria = new Citta();
-console.log("le città di:", (milano.nomeCitta), (roma.nomeCitta), (torino.nomeCitta), (napoli.nomeCitta), (firenze.nomeCitta), (bologna.nomeCitta), (venezia.nomeCitta), (verona.nomeCitta), (genova.nomeCitta), (palermo.nomeCitta), (catania.nomeCitta), (bari.nomeCitta), (lecce.nomeCitta), (ancona.nomeCitta), (perugia.nomeCitta), (ferrara.nomeCitta), (trento.nomeCitta), (bolzano.nomeCitta), (catanzaro.nomeCitta), (reggioCalabria.nomeCitta), "è stata creata");
+export let milano = new Citta("Milano");
+export let roma = new Citta("Roma");
+export let torino = new Citta("Torino");
+export let napoli = new Citta("Napoli");
+export let firenze = new Citta("Firenze");
+export let bologna = new Citta("Bologna");
+export let venezia = new Citta("Venezia");
+export let verona = new Citta("Verona");
+export let genova = new Citta("Genova");
+export let palermo = new Citta("Palermo");
+export let catania = new Citta("Catania");
+export let bari = new Citta("Bari");
+export let lecce = new Citta("Lecce");
+export let ancona = new Citta("Ancona");
+export let perugia = new Citta("Perugia");
+export let pescara = new Citta("Pescara");
+export let ferrara = new Citta("Ferrara");
+export let trento = new Citta("Trento");
+export let bolzano = new Citta("Bolzano");
+export let catanzaro = new Citta("Catanzaro");
+export let reggioCalabria = new Citta("Reggio Calabria");
+//======================== TEST =======================================
+console.log("le città di:", (milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria), "sono state create correttamente");
 //# sourceMappingURL=ICitta.js.map

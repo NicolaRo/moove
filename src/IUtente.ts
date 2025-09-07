@@ -7,7 +7,7 @@ export interface IUtente {
   metodoPagamento: string; // "carta di credito", "paypal", "apple pay"
 }
 
-//================================= CLASSE ===================================
+//================================= CREO LA CLASSE PER L'UTENTE' ===================================
 // Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 export class Utente implements IUtente {
   nome: string;
