@@ -28,5 +28,5 @@ export declare let ferrara: Citta;
 export declare let trento: Citta;
 export declare let bolzano: Citta;
 export declare let catanzaro: Citta;
-export declare let reggioCalabria: Citta;
+export declare let parma: Citta;
 //# sourceMappingURL=ICitta.d.ts.map

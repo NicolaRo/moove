@@ -2,18 +2,13 @@
 export class Citta {
     constructor(nomeCitta, mezziDisponibili = []) {
         this.nomeCitta = nomeCitta;
-        this.mezziDisponibili = [...mezziDisponibili];
+        this.mezziDisponibili = mezziDisponibili;
         console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili);
     }
     aggiungiMezzo(mezzo) {
-        if (mezzo.statoMezzo === true) {
-            console.log("in", this.nomeCitta, "sono disponibili", this.mezziDisponibili);
-            mezzo.statoMezzo = false;
-        }
-        else {
-            mezzo.statoMezzo = true;
-            console.log("il mezzo", mezzo.idMezzo, "non è disponibile");
-        }
+        let mezziDisponibili = this.mezziDisponibili;
+        mezziDisponibili.push(mezzo);
+        console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili);
     }
 }
 //======================== CREO LA CITTÁ =======================================
@@ -37,7 +32,10 @@ export let ferrara = new Citta("Ferrara");
 export let trento = new Citta("Trento");
 export let bolzano = new Citta("Bolzano");
 export let catanzaro = new Citta("Catanzaro");
-export let reggioCalabria = new Citta("Reggio Calabria");
+export let parma = new Citta("Parma");
 //======================== TEST =======================================
-console.log("le città di:", (milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria), "sono state create correttamente");
+/* console.log(
+  "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria),
+  "sono state create correttamente"
+); */
 //# sourceMappingURL=ICitta.js.map

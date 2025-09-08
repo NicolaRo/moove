@@ -1,4 +1,4 @@
-import { IMezzo } from "./IMezzo.js";
+import { IMezzo, Mezzo } from "./IMezzo.js";
 import { Utente } from "./IUtente.js";
 
 export interface ICitta {
@@ -16,25 +16,16 @@ export class Citta implements ICitta {
     mezziDisponibili: IMezzo[] = []
   ) {
     this.nomeCitta = nomeCitta;
-    this.mezziDisponibili = [...mezziDisponibili];
+    this.mezziDisponibili = mezziDisponibili;
     console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili);
   }
 
-  aggiungiMezzo(mezzo: IMezzo): void {
-    if (mezzo.statoMezzo === true) {
-      console.log(
-        "in",
-        this.nomeCitta,
-        "sono disponibili",
-        this.mezziDisponibili
-      );
-      mezzo.statoMezzo = false;
+aggiungiMezzo(mezzo: IMezzo): void {
+  let mezziDisponibili = this.mezziDisponibili;
+  mezziDisponibili.push(mezzo);
+  console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili);
+}
 
-    } else {
-      mezzo.statoMezzo = true;
-      console.log ("il mezzo", mezzo.idMezzo, "non è disponibile");
-    }
-  }
 }
 //======================== CREO LA CITTÁ =======================================
 
@@ -78,10 +69,10 @@ export let bolzano = new Citta("Bolzano");
 
 export let catanzaro = new Citta("Catanzaro");
 
-export let reggioCalabria = new Citta("Reggio Calabria");
+export let parma = new Citta("Parma");
 //======================== TEST =======================================
 
-console.log(
+/* console.log(
   "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria),
   "sono state create correttamente"
-);
+); */
