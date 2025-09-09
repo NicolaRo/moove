@@ -14,9 +14,11 @@ export class Mezzo {
     assegnaUtente(Utente) {
         if (this.statoMezzo === true) {
             this.statoMezzo = false;
+            //console.log per debug
             console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
         }
         else {
+            //console.log per debug
             console.log("Il mezzo", this.idMezzo, "non è disponibile - già assegnato");
         }
     }
