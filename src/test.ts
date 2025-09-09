@@ -134,6 +134,9 @@ parma.aggiungiMezzo(bicicletta);
 
 //======================== ASSEGNO L'UTENTE =======================================
 
+
+
+/* 
 bicicletta.assegnaUtente(utente1);
 scooter.assegnaUtente(utente2);
-monopattino.assegnaUtente(utente3);
+monopattino.assegnaUtente(utente3); */

@@ -2,10 +2,6 @@
 import { bicicletta } from "./IMezzo.js";
 import { monopattino } from "./IMezzo.js";
 import { scooter } from "./IMezzo.js";
-//======================== IMPORTO L'UTENTE =======================================
-import { utente1 } from "./IUtente.js";
-import { utente2 } from "./IUtente.js";
-import { utente3 } from "./IUtente.js";
 // ======================== IMPORTO LE CITTÁ =======================================
 import { milano, roma, torino, napoli, firenze, bologna, venezia, verona, genova, palermo, catania, bari, lecce, ancona, perugia, pescara, ferrara, trento, bolzano, catanzaro, parma } from "./ICitta.js";
 // ========================== AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =======================
@@ -98,7 +94,8 @@ parma.aggiungiMezzo(bicicletta);
 /* console.log("Mezzi di Trento:", parma.mezziDisponibili);
  */
 //======================== ASSEGNO L'UTENTE =======================================
+/*
 bicicletta.assegnaUtente(utente1);
 scooter.assegnaUtente(utente2);
-monopattino.assegnaUtente(utente3);
+monopattino.assegnaUtente(utente3); */
 //# sourceMappingURL=test.js.map

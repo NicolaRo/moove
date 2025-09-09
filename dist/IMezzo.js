@@ -6,10 +6,18 @@ export class Mezzo {
         this.tipoMezzo = tipo;
         this.idMezzo = `${tipo}-${Mezzo.contatore.toString().padStart(3, "0")}`;
         this.statoMezzo = true;
-        console.log("Mezzo creato:", this);
+        // console.log per debug
+        /* console.log("Mezzo creato:", this); */
     }
+    // ===================== ASSEGNO UN MEZZO A CIASCUN UTENTE =====================
     assegnaUtente(Utente) {
-        console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
+        if (this.statoMezzo === true) {
+            this.statoMezzo = false;
+            console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
+        }
+        else {
+            console.log("Il mezzo", this.idMezzo, "non è disponibile - già assegnato");
+        }
     }
 }
 Mezzo.contatore = 0;

@@ -17,7 +17,8 @@ export class Citta implements ICitta {
   ) {
     this.nomeCitta = nomeCitta;
     this.mezziDisponibili = mezziDisponibili;
-    console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili);
+    // console.log per debug
+    /* console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili); */
   }
 
 aggiungiMezzo(mezzo: IMezzo): void {
@@ -70,7 +71,9 @@ export let bolzano = new Citta("Bolzano");
 export let catanzaro = new Citta("Catanzaro");
 
 export let parma = new Citta("Parma");
+
 //======================== TEST =======================================
+// console.log per debug
 
 /* console.log(
   "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria),
