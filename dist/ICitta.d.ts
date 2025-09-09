@@ -4,7 +4,7 @@ export interface ICitta {
 }
 export declare class Citta implements ICitta {
     nomeCitta: string;
-    mezziDisponibili: IMezzo[];
+    parcoMezzi: IMezzo[];
     constructor(nomeCitta: string, mezziDisponibili?: IMezzo[]);
     aggiungiMezzo(mezzo: IMezzo): void;
 }

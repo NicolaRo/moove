@@ -65,5 +65,5 @@ export let utente3 = new Utente(
   "gionesto@email.com",
   "apple pay"
 )
-console.log((utente1),(utente2),(utente3));
+console.log("sgli utenti:", (utente1),(utente2),(utente3), "sono stati aggiunti");
 

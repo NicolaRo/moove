@@ -1,4 +1,4 @@
-import { IMezzo, Mezzo } from "./IMezzo.js";
+import { IMezzo, Mezzo, parcoMezzi } from "./IMezzo.js";
 import { Utente } from "./IUtente.js";
 
 export interface ICitta {
@@ -9,22 +9,22 @@ export interface ICitta {
 
 export class Citta implements ICitta {
   nomeCitta: string;
-  mezziDisponibili: IMezzo[];
+  parcoMezzi: IMezzo[];
 
   constructor(
     nomeCitta: string, 
     mezziDisponibili: IMezzo[] = []
   ) {
     this.nomeCitta = nomeCitta;
-    this.mezziDisponibili = mezziDisponibili;
+    this.parcoMezzi = parcoMezzi;
     // console.log per debug
     /* console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili); */
   }
 
 aggiungiMezzo(mezzo: IMezzo): void {
-  let mezziDisponibili = this.mezziDisponibili;
-  mezziDisponibili.push(mezzo);
-  console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili);
+  let parcoMezzi = this.parcoMezzi;
+  parcoMezzi.push(mezzo);
+  console.log("In", this.nomeCitta, "sono disponibili:", parcoMezzi);
 }
 
 }

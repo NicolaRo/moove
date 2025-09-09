@@ -1,101 +1,121 @@
 //======================== TEST =======================================
-import { bicicletta } from "./IMezzo.js";
-import { monopattino } from "./IMezzo.js";
-import { scooter } from "./IMezzo.js";
+//======================== IMPORTO L'UTENTE =======================================
+import { utente1 } from "./IUtente.js";
+import { utente2 } from "./IUtente.js";
+import { utente3 } from "./IUtente.js";
 // ======================== IMPORTO LE CITTÁ =======================================
-import { milano, roma, torino, napoli, firenze, bologna, venezia, verona, genova, palermo, catania, bari, lecce, ancona, perugia, pescara, ferrara, trento, bolzano, catanzaro, parma } from "./ICitta.js";
+import { Mezzo } from "./IMezzo.js";
 // ========================== AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =======================
 // Includo console.log per debug
-milano.aggiungiMezzo(monopattino);
-milano.aggiungiMezzo(scooter);
-milano.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Milano:", milano.mezziDisponibili); */
-roma.aggiungiMezzo(monopattino);
-roma.aggiungiMezzo(scooter);
-roma.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Roma:", roma.mezziDisponibili); */
-torino.aggiungiMezzo(monopattino);
-torino.aggiungiMezzo(scooter);
-torino.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Torino:", torino.mezziDisponibili); */
-napoli.aggiungiMezzo(monopattino);
-napoli.aggiungiMezzo(scooter);
-napoli.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Napoli:", napoli.mezziDisponibili); */
-firenze.aggiungiMezzo(monopattino);
-firenze.aggiungiMezzo(scooter);
-firenze.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Firenze:", firenze.mezziDisponibili); */
-bologna.aggiungiMezzo(monopattino);
-bologna.aggiungiMezzo(scooter);
-bologna.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Bologna:", bologna.mezziDisponibili); */
-venezia.aggiungiMezzo(monopattino);
-venezia.aggiungiMezzo(scooter);
-venezia.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Venezia:", venezia.mezziDisponibili); */
-verona.aggiungiMezzo(monopattino);
-verona.aggiungiMezzo(scooter);
-verona.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Verona:", verona.mezziDisponibili); */
-genova.aggiungiMezzo(monopattino);
-genova.aggiungiMezzo(scooter);
-genova.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Genova:", genova.mezziDisponibili); */
-palermo.aggiungiMezzo(monopattino);
-palermo.aggiungiMezzo(scooter);
-palermo.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Milano:", milano.mezziDisponibili); */
-catania.aggiungiMezzo(monopattino);
-catania.aggiungiMezzo(scooter);
-catania.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Catania:", catania.mezziDisponibili); */
-bari.aggiungiMezzo(monopattino);
-bari.aggiungiMezzo(scooter);
-bari.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Bari:", bari.mezziDisponibili);
- */
-lecce.aggiungiMezzo(monopattino);
-lecce.aggiungiMezzo(scooter);
-lecce.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Lecce:", lecce.mezziDisponibili); */
-ancona.aggiungiMezzo(monopattino);
-ancona.aggiungiMezzo(scooter);
-ancona.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Ancona:", ancona.mezziDisponibili);
- */
-perugia.aggiungiMezzo(monopattino);
-perugia.aggiungiMezzo(scooter);
-perugia.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Perugia:", perugia.mezziDisponibili); */
-pescara.aggiungiMezzo(monopattino);
-pescara.aggiungiMezzo(scooter);
-pescara.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Pescara:", pescara.mezziDisponibili); */
-ferrara.aggiungiMezzo(monopattino);
-ferrara.aggiungiMezzo(scooter);
-ferrara.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Ferrara:", ferrara.mezziDisponibili); */
-trento.aggiungiMezzo(monopattino);
-trento.aggiungiMezzo(scooter);
-trento.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Trento:", trento.mezziDisponibili); */
-bolzano.aggiungiMezzo(monopattino);
-bolzano.aggiungiMezzo(scooter);
-bolzano.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Bolzano:", bolzano.mezziDisponibili); */
-catanzaro.aggiungiMezzo(monopattino);
-catanzaro.aggiungiMezzo(scooter);
-catanzaro.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Catanzaro:", catanzaro.mezziDisponibili); */
-parma.aggiungiMezzo(monopattino);
-parma.aggiungiMezzo(scooter);
-parma.aggiungiMezzo(bicicletta);
-/* console.log("Mezzi di Trento:", parma.mezziDisponibili);
- */
+let milanoBici = new Mezzo("bicicletta");
+let milanoScooter = new Mezzo("scooter");
+let milanoMono = new Mezzo("monopattino");
+export let mezziMilano = [milanoBici, milanoScooter, milanoMono];
+console.log("I mezzi disponibli a Milano sono:", mezziMilano);
+let romaBici = new Mezzo("bicicletta");
+let romaScooter = new Mezzo("scooter");
+let romaMono = new Mezzo("monopattino");
+export let mezziRoma = [romaBici, romaScooter, romaMono];
+console.log("I mezzi disponibli a Roma sono:", mezziRoma);
+let torinoBici = new Mezzo("bicicletta");
+let torinoScooter = new Mezzo("scooter");
+let torinoMono = new Mezzo("monopattino");
+export let mezziTorino = [torinoBici, torinoScooter, torinoMono];
+console.log("I mezzi disponibli a Torino sono:", mezziTorino);
+let napoliBici = new Mezzo("bicicletta");
+let napoliScooter = new Mezzo("scooter");
+let napoliMono = new Mezzo("monopattino");
+export let mezziNapoli = [napoliBici, napoliScooter, napoliMono];
+console.log("I mezzi disponibli a Milano sono:", mezziNapoli);
+let firenzeBici = new Mezzo("bicicletta");
+let firenzeScooter = new Mezzo("scooter");
+let firenzeMono = new Mezzo("monopattino");
+export let mezziFirenze = [firenzeBici, firenzeScooter, firenzeMono];
+console.log("I mezzi disponibli a Firenze sono:", mezziFirenze);
+let bolognaBici = new Mezzo("bicicletta");
+let bolognaScooter = new Mezzo("scooter");
+let bolognaMono = new Mezzo("monopattino");
+export let mezziBologna = [bolognaBici, bolognaScooter, bolognaMono];
+console.log("I mezzi disponibli a Bologna sono:", mezziBologna);
+let veneziaBici = new Mezzo("bicicletta");
+let veneziaScooter = new Mezzo("scooter");
+let veneziaMono = new Mezzo("monopattino");
+export let mezziVenezia = [veneziaBici, veneziaScooter, veneziaMono];
+console.log("I mezzi disponibli a Venezia sono:", mezziVenezia);
+let veronaBici = new Mezzo("bicicletta");
+let veronaScooter = new Mezzo("scooter");
+let veronaMono = new Mezzo("monopattino");
+export let mezziVerona = [veronaBici, veronaScooter, veronaMono];
+console.log("I mezzi disponibli a Verona sono:", mezziVerona);
+let genovaBici = new Mezzo("bicicletta");
+let genovaScooter = new Mezzo("scooter");
+let genovaMono = new Mezzo("monopattino");
+export let mezziGenova = [genovaBici, genovaScooter, genovaMono];
+console.log("I mezzi disponibli a Genova sono:", mezziGenova);
+let palermoBici = new Mezzo("bicicletta");
+let palermoScooter = new Mezzo("scooter");
+let palermoMono = new Mezzo("monopattino");
+export let mezziPalermo = [palermoBici, palermoScooter, palermoMono];
+console.log("I mezzi disponibli a Palermo sono:", mezziPalermo);
+let cataniaBici = new Mezzo("bicicletta");
+let cataniaScooter = new Mezzo("scooter");
+let cataniaMono = new Mezzo("monopattino");
+export let mezziCatania = [cataniaBici, cataniaScooter, cataniaMono];
+console.log("I mezzi disponibli a Catania sono:", mezziCatania);
+let bariBici = new Mezzo("bicicletta");
+let bariScooter = new Mezzo("scooter");
+let bariMono = new Mezzo("monopattino");
+export let mezziBari = [bariBici, bariScooter, bariMono];
+console.log("I mezzi disponibli a Bari sono:", mezziBari);
+let lecceBici = new Mezzo("bicicletta");
+let lecceScooter = new Mezzo("scooter");
+let lecceMono = new Mezzo("monopattino");
+export let mezziLecce = [lecceBici, lecceScooter, lecceMono];
+console.log("I mezzi disponibli a Lecce sono:", mezziLecce);
+let anconaBici = new Mezzo("bicicletta");
+let anconaScooter = new Mezzo("scooter");
+let anconaMono = new Mezzo("monopattino");
+export let mezziAncona = [anconaBici, anconaScooter, anconaMono];
+console.log("I mezzi disponibli a Ancona sono:", mezziAncona);
+let perugiaBici = new Mezzo("bicicletta");
+let perugiaScooter = new Mezzo("scooter");
+let perugiaMono = new Mezzo("monopattino");
+export let mezziPerugia = [perugiaBici, perugiaScooter, perugiaMono];
+console.log("I mezzi disponibli a Perugia sono:", mezziPerugia);
+let pescaraBici = new Mezzo("bicicletta");
+let pescaraScooter = new Mezzo("scooter");
+let pescaraMono = new Mezzo("monopattino");
+export let mezziPescara = [pescaraBici, pescaraScooter, pescaraMono];
+console.log("I mezzi disponibli a Pescara sono:", mezziPescara);
+let ferraraBici = new Mezzo("bicicletta");
+let ferraraScooter = new Mezzo("scooter");
+let ferraraMono = new Mezzo("monopattino");
+export let mezziFerrara = [ferraraBici, ferraraScooter, ferraraMono];
+console.log("I mezzi disponibli a Ferrara sono:", mezziFerrara);
+let trentoBici = new Mezzo("bicicletta");
+let trentoScooter = new Mezzo("scooter");
+let trentoMono = new Mezzo("monopattino");
+export let mezziTrento = [trentoBici, trentoScooter, trentoMono];
+console.log("I mezzi disponibli a Trento sono:", mezziTrento);
+let bolzanoBici = new Mezzo("bicicletta");
+let bolzanoScooter = new Mezzo("scooter");
+let bolzanoMono = new Mezzo("monopattino");
+export let mezziBolzano = [bolzanoBici, bolzanoScooter, bolzanoMono];
+console.log("I mezzi disponibli a Bolzano sono:", mezziBolzano);
+let catanzaroBici = new Mezzo("bicicletta");
+let catanzaroScooter = new Mezzo("scooter");
+let catanzaroMono = new Mezzo("monopattino");
+export let mezziCatanzaro = [catanzaroBici, catanzaroScooter, catanzaroMono];
+console.log("I mezzi disponibli a Catanzaro sono:", mezziCatanzaro);
+let parmaBici = new Mezzo("bicicletta");
+let parmaScooter = new Mezzo("scooter");
+let parmaMono = new Mezzo("monopattino");
+export let mezziParma = [parmaBici, parmaScooter, parmaMono];
+console.log("I mezzi disponibli a Parma sono:", mezziParma);
 //======================== ASSEGNO L'UTENTE =======================================
-/*
-bicicletta.assegnaUtente(utente1);
-scooter.assegnaUtente(utente2);
-monopattino.assegnaUtente(utente3); */
+milanoScooter.assegnaUtente(utente1);
+romaMono.assegnaUtente(utente2);
+ferraraBici.assegnaUtente(utente3);
+//================= PRENOTO UN MEZZO PER UN UTENTE =====================
+prenotaMezzo.torinoMono(utente2);
 //# sourceMappingURL=test.js.map

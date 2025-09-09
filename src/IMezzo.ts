@@ -17,6 +17,8 @@ export class Mezzo implements IMezzo {
   idMezzo: string;
   statoMezzo: boolean;
   private static contatore = 0;
+  
+  // Fornisco al costruttore i parametri per creare le classi ed assegnare un valore univoco agli elementi
   constructor(tipo: string) {
     Mezzo.contatore++;
     this.tipoMezzo = tipo;
@@ -27,33 +29,28 @@ export class Mezzo implements IMezzo {
     /* console.log("Mezzo creato:", this); */ 
   }
 // ===================== ASSEGNO UN MEZZO A CIASCUN UTENTE =====================
-assegnaUtente(Utente: Utente): void {
-  if (this.statoMezzo === true) {
-    this.statoMezzo = false;
-    console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
-  } else {
-    console.log("Il mezzo", this.idMezzo, "non è disponibile - già assegnato");
+  assegnaUtente(Utente: Utente): void {
+    if (this.statoMezzo === true) {
+      this.statoMezzo = false;
+      //console.log per debug
+      console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
+    } else {
+      //console.log per debug
+      console.log("Il mezzo", this.idMezzo, "non è disponibile - già assegnato");
+    }
   }
-}
-  
 }
 
 //======================== CREO I MEZZI =======================================
 
 export let bicicletta = new Mezzo("bicicletta");
-
-console.log("il mezzo", bicicletta.idMezzo, "è stato creato");
-
 export let monopattino = new Mezzo("monopattino");
-
-console.log("il mezzo", monopattino.idMezzo, "è stato creato");
-
 export let scooter = new Mezzo("scooter");
 
-console.log("il mezzo", scooter.idMezzo, "è stato creato");
+console.log("i mezzi:",  bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezzo, "snon stati creati");
 
 //======================== CREO FLOTTA DEI MEZZI DISPONIBILI =======================================
 
-export let mezziDisponibili: IMezzo[] = [bicicletta, monopattino, scooter];
+export let parcoMezzi: IMezzo[] = [bicicletta, monopattino, scooter];
 
-console.log("Parco mezzi disponibili:", mezziDisponibili);
+console.log("il parco mezzi è composto da:", parcoMezzi);
