@@ -11,10 +11,11 @@ import { IUtente } from "./IUtente.js"
 import { utente1 } from "./IUtente.js";
 import { utente2 } from "./IUtente.js";
 import { utente3 } from "./IUtente.js";
+import { Utente } from  "./IUtente.js"
 
 // ======================== IMPORTO LE CITTÁ =======================================
 
-import {Mezzo} from "./IMezzo.js"
+import {Mezzo, /* bicicletta, scooter, monopattino */} from "./IMezzo.js"
 
 // ========================== AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =======================
 // Includo console.log per debug
@@ -155,4 +156,4 @@ ferraraBici.assegnaUtente(utente3)
 
 //================= PRENOTO UN MEZZO PER UN UTENTE =====================
 
-prenotaMezzo.torinoMono(utente2);
+prenotaMezzo

@@ -4,7 +4,7 @@ import { utente1 } from "./IUtente.js";
 import { utente2 } from "./IUtente.js";
 import { utente3 } from "./IUtente.js";
 // ======================== IMPORTO LE CITTÁ =======================================
-import { Mezzo } from "./IMezzo.js";
+import { Mezzo, /* bicicletta, scooter, monopattino */ } from "./IMezzo.js";
 // ========================== AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =======================
 // Includo console.log per debug
 let milanoBici = new Mezzo("bicicletta");
@@ -117,5 +117,5 @@ milanoScooter.assegnaUtente(utente1);
 romaMono.assegnaUtente(utente2);
 ferraraBici.assegnaUtente(utente3);
 //================= PRENOTO UN MEZZO PER UN UTENTE =====================
-prenotaMezzo.torinoMono(utente2);
+prenotaMezzo;
 //# sourceMappingURL=test.js.map

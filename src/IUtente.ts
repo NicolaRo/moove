@@ -37,7 +37,6 @@ export class Utente implements IUtente {
         mezzo.idMezzo
       );
     } else {
-      mezzo.statoMezzo === false;
       console.log("Il mezzo", mezzo.idMezzo, "non è disponibile");
     }
   }
@@ -50,20 +49,19 @@ export let utente1 = new Utente(
   "Rossi",
   "mario@email.com",
   "carta di credito"
-)
+);
 
 export let utente2 = new Utente(
   "Francesco",
   "Gallo",
   "f.gallo@email.com",
   "paypal"
-)
+);
 
 export let utente3 = new Utente(
   "Giovanni",
   "Renesto",
   "gionesto@email.com",
   "apple pay"
-)
-console.log("sgli utenti:", (utente1),(utente2),(utente3), "sono stati aggiunti");
-
+);
+console.log("sgli utenti:", utente1, utente2, utente3, "sono stati aggiunti");
