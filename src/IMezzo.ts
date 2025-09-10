@@ -47,10 +47,10 @@ export let bicicletta = new Mezzo("bicicletta");
 export let monopattino = new Mezzo("monopattino");
 export let scooter = new Mezzo("scooter");
 
-console.log("i mezzi:",  bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezzo, "snon stati creati");
+console.log("i mezzi:",  bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezzo, "sono stati creati");
 
 //======================== CREO FLOTTA DEI MEZZI DISPONIBILI =======================================
 
-export let parcoMezzi: IMezzo[] = [bicicletta, monopattino, scooter];
+export let mezziDisponibili: IMezzo[] = [bicicletta, monopattino, scooter];
 
-console.log("il parco mezzi è composto da:", parcoMezzi);
+console.log("il parco mezzi è composto da:", mezziDisponibili);

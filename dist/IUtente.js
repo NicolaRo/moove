@@ -9,7 +9,7 @@ export class Utente {
     }
     prenotaMezzo(mezzo) {
         if (mezzo.statoMezzo === true) {
-            console.log(mezzo.statoMezzo);
+            console.log("il mezzo:", mezzo, "è prenotabile", mezzo.statoMezzo);
             mezzo.statoMezzo = false;
             console.log("l'utente", this.nome, "ha prenotato il mezzo:", mezzo.idMezzo);
         }
@@ -22,5 +22,5 @@ export class Utente {
 export let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
 export let utente2 = new Utente("Francesco", "Gallo", "f.gallo@email.com", "paypal");
 export let utente3 = new Utente("Giovanni", "Renesto", "gionesto@email.com", "apple pay");
-console.log("sgli utenti:", utente1, utente2, utente3, "sono stati aggiunti");
+console.log("gli utenti:", utente1, utente2, utente3, "sono stati aggiunti");
 //# sourceMappingURL=IUtente.js.map

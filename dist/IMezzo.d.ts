@@ -15,5 +15,5 @@ export declare class Mezzo implements IMezzo {
 export declare let bicicletta: Mezzo;
 export declare let monopattino: Mezzo;
 export declare let scooter: Mezzo;
-export declare let parcoMezzi: IMezzo[];
+export declare let mezziDisponibili: IMezzo[];
 //# sourceMappingURL=IMezzo.d.ts.map

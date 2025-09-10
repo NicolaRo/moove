@@ -28,7 +28,7 @@ export class Utente implements IUtente {
   }
   prenotaMezzo(mezzo: Mezzo): void {
     if (mezzo.statoMezzo === true) {
-      console.log(mezzo.statoMezzo);
+      console.log("il mezzo:", mezzo, "è prenotabile", mezzo.statoMezzo);
       mezzo.statoMezzo = false;
       console.log(
         "l'utente",
@@ -64,4 +64,4 @@ export let utente3 = new Utente(
   "gionesto@email.com",
   "apple pay"
 );
-console.log("sgli utenti:", utente1, utente2, utente3, "sono stati aggiunti");
+console.log("gli utenti:", utente1, utente2, utente3, "sono stati aggiunti");

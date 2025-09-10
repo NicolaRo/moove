@@ -1,4 +1,5 @@
 //======================== TEST =======================================
+import { milano } from "./ICitta.js";
 //======================== IMPORTO L'UTENTE =======================================
 import { utente1 } from "./IUtente.js";
 import { utente2 } from "./IUtente.js";
@@ -112,10 +113,17 @@ let parmaScooter = new Mezzo("scooter");
 let parmaMono = new Mezzo("monopattino");
 export let mezziParma = [parmaBici, parmaScooter, parmaMono];
 console.log("I mezzi disponibli a Parma sono:", mezziParma);
-//======================== ASSEGNO L'UTENTE =======================================
+//======================== TEST ASSEGNAZIONE UTENTE =======================================
 milanoScooter.assegnaUtente(utente1);
 romaMono.assegnaUtente(utente2);
 ferraraBici.assegnaUtente(utente3);
-//================= PRENOTO UN MEZZO PER UN UTENTE =====================
-prenotaMezzo;
+//================= TEST PRENOTAZIONE MEZZO PER UN UTENTE =====================
+utente1.prenotaMezzo(milanoMono);
+console.log("il cliente", utente1, "ha prenotato", milanoMono);
+// =============== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE ================
+utente2.prenotaMezzo(milanoMono);
+// Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
+// =============== TEST AGGIUNTA MEZZO  ================
+milano.aggiungiMezzo(milanoBici);
+console.log("il mezzo:", milanoBici, "è stato aggiunto alla città di:", milano);
 //# sourceMappingURL=test.js.map

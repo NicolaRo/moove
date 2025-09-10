@@ -1,11 +1,12 @@
 //======================== TEST =======================================
 
-// File index di test  per verificare la corretta implementazione delle classe e delle interfacce
+// File di test  per verificare la corretta implementazione delle classe e delle interfacce
 
 //======================== IMPORTO OGGETTI DAGLI ALTRI FILES =======================================
 
 import { IMezzo } from "./IMezzo.js";
 import { IUtente } from "./IUtente.js"
+import { ICitta, milano } from "./ICitta.js"
 
 //======================== IMPORTO L'UTENTE =======================================
 import { utente1 } from "./IUtente.js";
@@ -148,12 +149,22 @@ export let mezziParma: IMezzo [] = [parmaBici, parmaScooter, parmaMono];
 console.log ("I mezzi disponibli a Parma sono:",mezziParma); 
 
 
-//======================== ASSEGNO L'UTENTE =======================================
+//======================== TEST ASSEGNAZIONE UTENTE =======================================
 
 milanoScooter.assegnaUtente(utente1)
 romaMono.assegnaUtente(utente2)
 ferraraBici.assegnaUtente(utente3)
 
-//================= PRENOTO UN MEZZO PER UN UTENTE =====================
+//================= TEST PRENOTAZIONE MEZZO PER UN UTENTE =====================
 
-prenotaMezzo
+utente1.prenotaMezzo(milanoMono)
+console.log("il cliente", utente1, "ha prenotato", milanoMono);
+
+
+// =============== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE ================
+utente2.prenotaMezzo(milanoMono)
+// Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
+
+// =============== TEST AGGIUNTA MEZZO  ================
+milano.aggiungiMezzo(milanoBici)
+console.log ("il mezzo:", milanoBici, "è stato aggiunto alla città di:", milano)

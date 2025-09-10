@@ -1,10 +1,11 @@
 import { IMezzo } from "./IMezzo.js";
 export interface ICitta {
     nomeCitta: string;
+    mezziDisponibili: IMezzo[];
 }
 export declare class Citta implements ICitta {
     nomeCitta: string;
-    parcoMezzi: IMezzo[];
+    mezziDisponibili: IMezzo[];
     constructor(nomeCitta: string, mezziDisponibili?: IMezzo[]);
     aggiungiMezzo(mezzo: IMezzo): void;
 }

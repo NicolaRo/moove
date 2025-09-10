@@ -1,16 +1,16 @@
-import { parcoMezzi } from "./IMezzo.js";
 // ========================= CREO LA CLASSE PER LE CITTÁ =======================================
 export class Citta {
     constructor(nomeCitta, mezziDisponibili = []) {
         this.nomeCitta = nomeCitta;
-        this.parcoMezzi = parcoMezzi;
+        this.mezziDisponibili = mezziDisponibili;
         // console.log per debug
         /* console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili); */
     }
     aggiungiMezzo(mezzo) {
-        let parcoMezzi = this.parcoMezzi;
-        parcoMezzi.push(mezzo);
-        console.log("In", this.nomeCitta, "sono disponibili:", parcoMezzi);
+        let mezziDisponibili = this.mezziDisponibili;
+        mezziDisponibili.push(mezzo);
+        //console.log per debug
+        /* console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
     }
 }
 //======================== CREO LA CITTÁ =======================================

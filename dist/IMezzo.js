@@ -28,8 +28,8 @@ Mezzo.contatore = 0;
 export let bicicletta = new Mezzo("bicicletta");
 export let monopattino = new Mezzo("monopattino");
 export let scooter = new Mezzo("scooter");
-console.log("i mezzi:", bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezzo, "snon stati creati");
+console.log("i mezzi:", bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezzo, "sono stati creati");
 //======================== CREO FLOTTA DEI MEZZI DISPONIBILI =======================================
-export let parcoMezzi = [bicicletta, monopattino, scooter];
-console.log("il parco mezzi è composto da:", parcoMezzi);
+export let mezziDisponibili = [bicicletta, monopattino, scooter];
+console.log("il parco mezzi è composto da:", mezziDisponibili);
 //# sourceMappingURL=IMezzo.js.map
