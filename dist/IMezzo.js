@@ -1,3 +1,12 @@
+//===== DICHIARO ENUM =======
+//Assegnando diversi valori alla proprietà "stato" sarà più semplice integrare altri valori in futuro
+export var Stato;
+(function (Stato) {
+    Stato[Stato["disponibile"] = 0] = "disponibile";
+    //inManutenzione,
+    Stato[Stato["inUso"] = 1] = "inUso";
+    //fuoriServizio
+})(Stato || (Stato = {}));
 //================================= CLASSE ===================================
 // Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 export class Mezzo {
@@ -6,14 +15,14 @@ export class Mezzo {
         Mezzo.contatore++;
         this.tipoMezzo = tipo;
         this.idMezzo = `${tipo}-${Mezzo.contatore.toString().padStart(3, "0")}`;
-        this.statoMezzo = true;
+        this.stato = Stato.disponibile;
         // console.log per debug
         /* console.log("Mezzo creato:", this); */
     }
     // ===================== ASSEGNO UN MEZZO A CIASCUN UTENTE =====================
     assegnaUtente(Utente) {
-        if (this.statoMezzo === true) {
-            this.statoMezzo = false;
+        if (this.stato === Stato.disponibile) {
+            this.stato = Stato.inUso;
             //console.log per debug
             console.log("è stato assegnato", Utente.nome, "al mezzo", this.idMezzo);
         }

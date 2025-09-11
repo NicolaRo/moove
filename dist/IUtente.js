@@ -1,3 +1,4 @@
+import { Stato } from "./IMezzo.js";
 //================================= CREO LA CLASSE PER L'UTENTE' ===================================
 // Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 export class Utente {
@@ -8,9 +9,9 @@ export class Utente {
         this.metodoPagamento = metodoPagamento;
     }
     prenotaMezzo(mezzo) {
-        if (mezzo.statoMezzo === true) {
-            console.log("il mezzo:", mezzo, "è prenotabile", mezzo.statoMezzo);
-            mezzo.statoMezzo = false;
+        if (mezzo.stato === Stato.disponibile) {
+            console.log("il mezzo:", mezzo, "è prenotabile", mezzo.stato);
+            mezzo.stato = Stato.inUso;
             console.log("l'utente", this.nome, "ha prenotato il mezzo:", mezzo.idMezzo);
         }
         else {

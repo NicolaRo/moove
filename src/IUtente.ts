@@ -1,4 +1,4 @@
-import { Mezzo } from "./IMezzo.js";
+import { Mezzo, Stato } from "./IMezzo.js";
 import { ICitta } from "./ICitta.js";
 //================================= CLASSE ===================================
 export interface IUtente {
@@ -28,9 +28,9 @@ export class Utente implements IUtente {
     this.metodoPagamento = metodoPagamento;
   }
   prenotaMezzo(mezzo: Mezzo): void {
-    if (mezzo.statoMezzo === true) {
-      console.log("il mezzo:", mezzo, "è prenotabile", mezzo.statoMezzo);
-      mezzo.statoMezzo = false;
+    if (mezzo.stato === Stato.disponibile) {
+      console.log("il mezzo:", mezzo, "è prenotabile", mezzo.stato);
+      mezzo.stato = Stato.inUso;
       console.log(
         "l'utente",
         this.nome,
