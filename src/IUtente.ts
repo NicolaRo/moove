@@ -1,4 +1,5 @@
 import { Mezzo } from "./IMezzo.js";
+import { ICitta } from "./ICitta.js";
 //================================= CLASSE ===================================
 export interface IUtente {
   nome: string;
@@ -37,7 +38,7 @@ export class Utente implements IUtente {
         mezzo.idMezzo
       );
     } else {
-      console.log("Il mezzo", mezzo.idMezzo, "non è disponibile");
+      console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato");
     }
   }
 }

@@ -31,5 +31,5 @@ export let scooter = new Mezzo("scooter");
 console.log("i mezzi:", bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezzo, "sono stati creati");
 //======================== CREO FLOTTA DEI MEZZI DISPONIBILI =======================================
 export let mezziDisponibili = [bicicletta, monopattino, scooter];
-console.log("il parco mezzi è composto da:", mezziDisponibili);
+console.log("Mezzi disponibili:", mezziDisponibili);
 //# sourceMappingURL=IMezzo.js.map

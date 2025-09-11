@@ -1,5 +1,6 @@
-import { IMezzo, Mezzo, mezziDisponibili } from "./IMezzo.js";
+import { IMezzo, Mezzo, bicicletta, mezziDisponibili, monopattino, scooter } from "./IMezzo.js";
 import { Utente } from "./IUtente.js";
+/* import { mezziMilano } from "./test.js"; */
 
 export interface ICitta {
   nomeCitta: string;
@@ -12,9 +13,11 @@ export class Citta implements ICitta {
   nomeCitta: string;
   mezziDisponibili: IMezzo[];
 
+
   constructor(
     nomeCitta: string, 
-    mezziDisponibili: IMezzo[] = []
+    mezziDisponibili: IMezzo[] = [],
+ 
   ) {
     this.nomeCitta = nomeCitta;
     this.mezziDisponibili = mezziDisponibili;
@@ -22,14 +25,16 @@ export class Citta implements ICitta {
     /* console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili); */
   }
 
-aggiungiMezzo(mezzo: IMezzo): void {
-  let mezziDisponibili = this.mezziDisponibili;
-  mezziDisponibili.push(mezzo);
-  //console.log per debug
-  /* console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
-}
+  aggiungiMezzo(mezzo: IMezzo): void {
+    let mezziDisponibili = this.mezziDisponibili;
+    mezziDisponibili.push(mezzo);
+    //console.log per debug
+    /* console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
+  }
+
 
 }
+
 //======================== CREO LA CITTÁ =======================================
 
 export let milano = new Citta("Milano");
@@ -51,13 +56,11 @@ export let pescara = new Citta("Pescara");
 export let ferrara = new Citta("Ferrara");
 export let trento = new Citta("Trento");
 export let bolzano = new Citta("Bolzano");
-export let catanzaro = new Citta("Catanzaro");
 export let parma = new Citta("Parma");
 
 //======================== TEST =======================================
 // console.log per debug
 
-/* console.log(
-  "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria),
-  "sono state create correttamente"
-); */
+console.log(
+  "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (parma),
+  "sono state create correttamente"); 

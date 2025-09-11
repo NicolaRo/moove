@@ -1,23 +1,2 @@
-import { IMezzo } from "./IMezzo.js";
-export declare let mezziMilano: IMezzo[];
-export declare let mezziRoma: IMezzo[];
-export declare let mezziTorino: IMezzo[];
-export declare let mezziNapoli: IMezzo[];
-export declare let mezziFirenze: IMezzo[];
-export declare let mezziBologna: IMezzo[];
-export declare let mezziVenezia: IMezzo[];
-export declare let mezziVerona: IMezzo[];
-export declare let mezziGenova: IMezzo[];
-export declare let mezziPalermo: IMezzo[];
-export declare let mezziCatania: IMezzo[];
-export declare let mezziBari: IMezzo[];
-export declare let mezziLecce: IMezzo[];
-export declare let mezziAncona: IMezzo[];
-export declare let mezziPerugia: IMezzo[];
-export declare let mezziPescara: IMezzo[];
-export declare let mezziFerrara: IMezzo[];
-export declare let mezziTrento: IMezzo[];
-export declare let mezziBolzano: IMezzo[];
-export declare let mezziCatanzaro: IMezzo[];
-export declare let mezziParma: IMezzo[];
+export {};
 //# sourceMappingURL=test.d.ts.map

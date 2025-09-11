@@ -14,7 +14,7 @@ export class Utente {
             console.log("l'utente", this.nome, "ha prenotato il mezzo:", mezzo.idMezzo);
         }
         else {
-            console.log("Il mezzo", mezzo.idMezzo, "non è disponibile");
+            console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato");
         }
     }
 }

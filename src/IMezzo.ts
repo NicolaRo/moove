@@ -1,6 +1,7 @@
 //======================== IMPORTO LE INTERFACCE ESTERNE =======================================
 import { Utente } from "./IUtente.js";
 
+
 //======================== INTERFACCIA =======================================
 // Definisco l'interfaccia IMezzo per gestire i diversi mezzi noleggiabili
 //Elenco le proprietà di ciascun mezzo (quelle proprie e condivise da tutti i mezzi)
@@ -30,6 +31,7 @@ export class Mezzo implements IMezzo {
   }
 // ===================== ASSEGNO UN MEZZO A CIASCUN UTENTE =====================
   assegnaUtente(Utente: Utente): void {
+    
     if (this.statoMezzo === true) {
       this.statoMezzo = false;
       //console.log per debug
@@ -53,4 +55,4 @@ console.log("i mezzi:",  bicicletta.idMezzo, monopattino.idMezzo, scooter.idMezz
 
 export let mezziDisponibili: IMezzo[] = [bicicletta, monopattino, scooter];
 
-console.log("il parco mezzi è composto da:", mezziDisponibili);
+console.log("Mezzi disponibili:", mezziDisponibili);

@@ -33,12 +33,8 @@ export let pescara = new Citta("Pescara");
 export let ferrara = new Citta("Ferrara");
 export let trento = new Citta("Trento");
 export let bolzano = new Citta("Bolzano");
-export let catanzaro = new Citta("Catanzaro");
 export let parma = new Citta("Parma");
 //======================== TEST =======================================
 // console.log per debug
-/* console.log(
-  "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (catanzaro), (reggioCalabria),
-  "sono state create correttamente"
-); */
+console.log("le città di:", (milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (parma), "sono state create correttamente");
 //# sourceMappingURL=ICitta.js.map
