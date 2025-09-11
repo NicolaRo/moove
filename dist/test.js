@@ -145,5 +145,6 @@ utente2.prenotaMezzo(milanoMono);
 // Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
 // =============== TEST AGGIUNTA MEZZO  ================
 milano.aggiungiMezzo;
+new Mezzo("bicicletta");
 console.log("il mezzo:", bicicletta, "è stato aggiunto alla città di:", milano);
 //# sourceMappingURL=test.js.map
