@@ -12,6 +12,7 @@ export class Utente {
         if (mezzo.stato === Stato.disponibile) {
             console.log("il mezzo:", mezzo, "è prenotabile", mezzo.stato);
             mezzo.stato = Stato.inUso;
+            Utente: Utente;
             console.log("l'utente", this.nome, "ha prenotato il mezzo:", mezzo.idMezzo);
         }
         else {
