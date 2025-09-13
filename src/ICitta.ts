@@ -1,4 +1,4 @@
-import { IMezzo, Mezzo, bicicletta, mezziDisponibili, monopattino, scooter } from "./IMezzo.js";
+import { IMezzo, Mezzo, /* Mezzo, bicicletta, mezziDisponibili, monopattino, scooter  */} from "./IMezzo.js";
 import { Utente } from "./IUtente.js";
 /* import { mezziMilano } from "./test.js"; */
 
@@ -25,16 +25,16 @@ export class Citta implements ICitta {
     /* console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili); */
   }
 
+
+
   aggiungiMezzo(mezzo: IMezzo): void {
     let mezziDisponibili = this.mezziDisponibili;
-    mezziDisponibili.push(mezzo);
+    this.mezziDisponibili.push(mezzo);
     //console.log per debug
-    /* console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
+  /* console.log("A", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
   }
 
-
 }
-
 //======================== CREO LA CITTÁ =======================================
 
 export let milano = new Citta("Milano");
@@ -58,9 +58,30 @@ export let trento = new Citta("Trento");
 export let bolzano = new Citta("Bolzano");
 export let parma = new Citta("Parma");
 
-//======================== TEST =======================================
+/* //======================== TEST =======================================
 // console.log per debug
 
 console.log(
-  "le città di:",(milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (parma),
+  "le città di:",
+  (milano),
+  (roma),
+  (torino),
+  (napoli),
+  (firenze),
+  (bologna),
+  (venezia),
+  (verona),
+  (genova),
+  (palermo),
+  (catania),
+  (bari),
+  (lecce),
+  (ancona),
+  (perugia),
+  (pescara),
+  (ferrara), 
+  (trento),
+  (bolzano),
+  (parma),
   "sono state create correttamente"); 
+ */

@@ -1,16 +1,26 @@
 //======================== TEST =======================================
-// File di test  per verificare la corretta implementazione delle classe e delle interfacce
-//======================== IMPORTO LE INTERFACCE DAGLI ALTRI FILES =======================================
-import { bicicletta } from "./IMezzo.js";
-//======================= IMPORTO MEZZO ================
-import { Mezzo, } from "./IMezzo.js";
-//======================== IMPORTO GLI UTENTI =======================================
-import { utente1 } from "./IUtente.js";
-import { utente2 } from "./IUtente.js";
-import { utente3 } from "./IUtente.js";
-// ======================== IMPORTO LE CITTÁ =======================================
+//Verifico la corretta implementazione delle classe e delle interfacce
+import { Utente } from "./IUtente.js";
+import { Mezzo } from "./IMezzo.js";
+// ===== IMPORTO LE CITTÁ =====
 import { milano, roma, torino, napoli, firenze, bologna, venezia, verona, genova, palermo, catania, bari, lecce, ancona, perugia, pescara, ferrara, trento, bolzano, parma, } from "./ICitta.js";
-// ========================== AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =======================
+//===== CREO L'UTENTE =====
+export let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
+export let utente2 = new Utente("Francesco", "Gallo", "f.gallo@email.com", "paypal");
+export let utente3 = new Utente("Giovanni", "Renesto", "gionesto@email.com", "apple pay");
+console.log("gli utenti:", utente1, ",", utente2, ",", utente3, "sono stati aggiunti");
+//===== CREO I MEZZI =====
+export let bicicletta = new Mezzo("bicicletta");
+export let monopattino = new Mezzo("monopattino");
+export let scooter = new Mezzo("scooter");
+/* console.log("i mezzi:",
+    bicicletta.idMezzo,
+    monopattino.idMezzo,
+    scooter.idMezzo,
+    "sono stati creati");  */
+//=====CREO FLOTTA DEI MEZZI DISPONIBILI =====
+export let mezziDisponibili = [bicicletta, monopattino, scooter];
+//=====AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =====
 //Creo i mezzi in ciascuna città:
 let milanoBici = new Mezzo("bicicletta");
 let milanoScooter = new Mezzo("scooter");
@@ -133,18 +143,24 @@ let parmaMono = new Mezzo("monopattino");
 parma.aggiungiMezzo(parmaBici);
 parma.aggiungiMezzo(parmaScooter);
 parma.aggiungiMezzo(parmaMono);
-//======================== TEST ASSEGNAZIONE UTENTE =======================================
+//===== TEST AGGIUNGO UN MEZZO AD UNA CITTÀ =====
+console.log("Il mezzo:", (() => {
+    const m = new Mezzo("bicicletta");
+    milano.aggiungiMezzo(m);
+    return m.idMezzo;
+})(), "è stato aggiunto alla città di:", milano.nomeCitta);
+// Verifico la disponibilità dei mezzi aggiornata
+milano.mezziDisponibili;
+console.log("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
+//===== TEST ASSEGNAZIONE UTENTE =====
 milanoScooter.assegnaUtente(utente1);
+milanoScooter.assegnaUtente(utente3);
 romaMono.assegnaUtente(utente2);
 ferraraBici.assegnaUtente(utente3);
-//================= TEST PRENOTAZIONE MEZZO PER UN UTENTE =====================
+//===== TEST PRENOTAZIONE MEZZO PER UN UTENTE =====
 utente1.prenotaMezzo(milanoMono);
 console.log("il cliente", utente1, "ha prenotato", milanoMono);
-// =============== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE ================
+//===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
 utente2.prenotaMezzo(milanoMono);
 // Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
-// =============== TEST AGGIUNTA MEZZO  ================
-milano.aggiungiMezzo;
-new Mezzo("bicicletta");
-console.log("il mezzo:", bicicletta, "è stato aggiunto alla città di:", milano);
 //# sourceMappingURL=test.js.map

@@ -10,19 +10,16 @@ export class Utente {
     }
     prenotaMezzo(mezzo) {
         if (mezzo.stato === Stato.disponibile) {
-            console.log("il mezzo:", mezzo, "è prenotabile", mezzo.stato);
-            mezzo.stato = Stato.inUso;
-            Utente: Utente;
+            console.log("il mezzo:", mezzo, "è", mezzo.stato);
+            // L'Utente prenota il mezzo che è "disponibile" di default.
             console.log("l'utente", this.nome, "ha prenotato il mezzo:", mezzo.idMezzo);
+            // Il mezzo cambia di stato.      
+            mezzo.stato = Stato.inUso;
+            console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato");
         }
         else {
-            console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato");
+            console.log("Il mezzo", mezzo.idMezzo, "è", mezzo.stato);
         }
     }
 }
-//======================== CREO L'UTENTE =======================================
-export let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
-export let utente2 = new Utente("Francesco", "Gallo", "f.gallo@email.com", "paypal");
-export let utente3 = new Utente("Giovanni", "Renesto", "gionesto@email.com", "apple pay");
-console.log("gli utenti:", utente1, utente2, utente3, "sono stati aggiunti");
 //# sourceMappingURL=IUtente.js.map

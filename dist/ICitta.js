@@ -8,9 +8,9 @@ export class Citta {
     }
     aggiungiMezzo(mezzo) {
         let mezziDisponibili = this.mezziDisponibili;
-        mezziDisponibili.push(mezzo);
+        this.mezziDisponibili.push(mezzo);
         //console.log per debug
-        /* console.log("In", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
+        /* console.log("A", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
     }
 }
 //======================== CREO LA CITTÁ =======================================
@@ -34,7 +34,31 @@ export let ferrara = new Citta("Ferrara");
 export let trento = new Citta("Trento");
 export let bolzano = new Citta("Bolzano");
 export let parma = new Citta("Parma");
-//======================== TEST =======================================
+/* //======================== TEST =======================================
 // console.log per debug
-console.log("le città di:", (milano), (roma), (torino), (napoli), (firenze), (bologna), (venezia), (verona), (genova), (palermo), (catania), (bari), (lecce), (ancona), (perugia), (pescara), (ferrara), (trento), (bolzano), (parma), "sono state create correttamente");
+
+console.log(
+  "le città di:",
+  (milano),
+  (roma),
+  (torino),
+  (napoli),
+  (firenze),
+  (bologna),
+  (venezia),
+  (verona),
+  (genova),
+  (palermo),
+  (catania),
+  (bari),
+  (lecce),
+  (ancona),
+  (perugia),
+  (pescara),
+  (ferrara),
+  (trento),
+  (bolzano),
+  (parma),
+  "sono state create correttamente");
+ */ 
 //# sourceMappingURL=ICitta.js.map
