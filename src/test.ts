@@ -80,6 +80,15 @@ export let scooter = new Mezzo("scooter");
 
 export let mezziDisponibili: IMezzo[] = [bicicletta, monopattino, scooter];
 
+//=====FUNZIONE GENERICA MEZZI DISPONIBILI =====
+
+function stampaMezzi(citta: Citta) {
+    let righe: string[] = [];
+    for (const m of citta.mezziDisponibili) {
+      righe.push(`${m.idMezzo} - ${m.stato}`);
+    }
+    console.log("I mezzi ora disponibili nella città di:", citta.nomeCitta, "\n", righe.join("\n"));
+}
 
 //=====AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =====
 
@@ -225,7 +234,6 @@ parma.aggiungiMezzo(parmaBici);
 parma.aggiungiMezzo(parmaScooter);
 parma.aggiungiMezzo(parmaMono);
 
-
 //===== TEST AGGIUNGO UN MEZZO AD UNA CITTÀ =====
 
 console.log(
@@ -238,9 +246,9 @@ console.log(
   );
 
 // Verifico la disponibilità dei mezzi aggiornata
-
+/* 
 milano.mezziDisponibili;
-console.log ("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
+console.log ("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili); */
  
 
 //===== TEST ASSEGNAZIONE UTENTE =====
@@ -260,3 +268,8 @@ console.log("il cliente", utente1, "ha prenotato", milanoMono);
 //===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
 utente2.prenotaMezzo(milanoMono)
 // Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
+
+
+//=====CHIAMO LA FUNZIONE PER ESEGUIRE IL CONTROLLO SU CIASCUNA CITTÀ =====
+stampaMezzi(milano);
+stampaMezzi(roma);

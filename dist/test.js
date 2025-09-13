@@ -20,6 +20,14 @@ export let scooter = new Mezzo("scooter");
     "sono stati creati");  */
 //=====CREO FLOTTA DEI MEZZI DISPONIBILI =====
 export let mezziDisponibili = [bicicletta, monopattino, scooter];
+//=====FUNZIONE GENERICA MEZZI DISPONIBILI =====
+function stampaMezzi(citta) {
+    let righe = [];
+    for (const m of citta.mezziDisponibili) {
+        righe.push(`${m.idMezzo} - ${m.stato}`);
+    }
+    console.log("I mezzi ora disponibili nella città di:", citta.nomeCitta, "\n", righe.join("\n"));
+}
 //=====AGGIUNGO I MEZZI DISPONIBILI ALLE CITTA =====
 //Creo i mezzi in ciascuna città:
 let milanoBici = new Mezzo("bicicletta");
@@ -150,8 +158,9 @@ console.log("Il mezzo:", (() => {
     return m.idMezzo;
 })(), "è stato aggiunto alla città di:", milano.nomeCitta);
 // Verifico la disponibilità dei mezzi aggiornata
+/*
 milano.mezziDisponibili;
-console.log("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
+console.log ("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili); */
 //===== TEST ASSEGNAZIONE UTENTE =====
 milanoScooter.assegnaUtente(utente1);
 milanoScooter.assegnaUtente(utente3);
@@ -163,4 +172,7 @@ console.log("il cliente", utente1, "ha prenotato", milanoMono);
 //===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
 utente2.prenotaMezzo(milanoMono);
 // Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
+//=====CHIAMO LA FUNZIONE PER ESEGUIRE IL CONTROLLO SU CIASCUNA CITTÀ =====
+stampaMezzi(milano);
+stampaMezzi(roma);
 //# sourceMappingURL=test.js.map
