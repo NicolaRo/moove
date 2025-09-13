@@ -3,14 +3,10 @@ export class Citta {
     constructor(nomeCitta, mezziDisponibili = []) {
         this.nomeCitta = nomeCitta;
         this.mezziDisponibili = mezziDisponibili;
-        // console.log per debug
-        /* console.log("Città creata:", this, "con mezzi disponibili:", this.mezziDisponibili); */
     }
     aggiungiMezzo(mezzo) {
         let mezziDisponibili = this.mezziDisponibili;
         this.mezziDisponibili.push(mezzo);
-        //console.log per debug
-        /* console.log("A", this.nomeCitta, "sono disponibili:", mezziDisponibili); */
     }
 }
 //======================== CREO LA CITTÁ =======================================
@@ -34,31 +30,4 @@ export let ferrara = new Citta("Ferrara");
 export let trento = new Citta("Trento");
 export let bolzano = new Citta("Bolzano");
 export let parma = new Citta("Parma");
-/* //======================== TEST =======================================
-// console.log per debug
-
-console.log(
-  "le città di:",
-  (milano),
-  (roma),
-  (torino),
-  (napoli),
-  (firenze),
-  (bologna),
-  (venezia),
-  (verona),
-  (genova),
-  (palermo),
-  (catania),
-  (bari),
-  (lecce),
-  (ancona),
-  (perugia),
-  (pescara),
-  (ferrara),
-  (trento),
-  (bolzano),
-  (parma),
-  "sono state create correttamente");
- */ 
 //# sourceMappingURL=ICitta.js.map

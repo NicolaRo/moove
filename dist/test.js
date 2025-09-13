@@ -151,6 +151,7 @@ let parmaMono = new Mezzo("monopattino");
 parma.aggiungiMezzo(parmaBici);
 parma.aggiungiMezzo(parmaScooter);
 parma.aggiungiMezzo(parmaMono);
+console.log("Moove è presente disponibile a:", (milano.nomeCitta), "con questi mezzi:", (milano.mezziDisponibili), (roma.nomeCitta), "con questi mezzi:", (roma.mezziDisponibili), (torino.nomeCitta), "con questi mezzi:", (torino.mezziDisponibili), (napoli.nomeCitta), "con questi mezzi:", (napoli.mezziDisponibili), (firenze.nomeCitta), "con questi mezzi:", (firenze.mezziDisponibili), (parma.nomeCitta), "con questi mezzi:", (parma.mezziDisponibili), (bologna.nomeCitta), "con questi mezzi:", (bologna.mezziDisponibili), (ferrara.nomeCitta), "con questi mezzi:", (ferrara.mezziDisponibili), (venezia.nomeCitta), "con questi mezzi:", (venezia.mezziDisponibili), (verona.nomeCitta), "con questi mezzi:", (verona.mezziDisponibili), (genova.nomeCitta), "con questi mezzi:", (genova.mezziDisponibili), (palermo.nomeCitta), "con questi mezzi:", (palermo.mezziDisponibili), (catania.nomeCitta), "con questi mezzi:", (catania.mezziDisponibili), (bari.nomeCitta), "con questi mezzi:", (bari.mezziDisponibili), (lecce.nomeCitta), "con questi mezzi:", (lecce.mezziDisponibili), (ancona.nomeCitta), "con questi mezzi:", (ancona.mezziDisponibili), (perugia.nomeCitta), "con questi mezzi:", (perugia.mezziDisponibili), (pescara.nomeCitta), "con questi mezzi:", (pescara.mezziDisponibili), (trento.nomeCitta), "con questi mezzi:", (trento.mezziDisponibili), (bolzano.nomeCitta), "con questi mezzi:", (bolzano.mezziDisponibili), "sono state create correttamente");
 //===== TEST AGGIUNGO UN MEZZO AD UNA CITTÀ =====
 console.log("Il mezzo:", (() => {
     const m = new Mezzo("bicicletta");
@@ -158,21 +159,19 @@ console.log("Il mezzo:", (() => {
     return m.idMezzo;
 })(), "è stato aggiunto alla città di:", milano.nomeCitta);
 // Verifico la disponibilità dei mezzi aggiornata
-/*
 milano.mezziDisponibili;
-console.log ("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili); */
-//===== TEST ASSEGNAZIONE UTENTE =====
-milanoScooter.assegnaUtente(utente1);
-milanoScooter.assegnaUtente(utente3);
-romaMono.assegnaUtente(utente2);
-ferraraBici.assegnaUtente(utente3);
+console.log("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
 //===== TEST PRENOTAZIONE MEZZO PER UN UTENTE =====
 utente1.prenotaMezzo(milanoMono);
-console.log("il cliente", utente1, "ha prenotato", milanoMono);
+console.log("Il cliente", utente1.nome, "ha prenotato il mezzo:", milanoMono.idMezzo);
+//===== TEST ASSEGNAZIONE UTENTE =====
+milanoScooter.assegnaUtente(utente1);
+console.log("Il mezzo:", milanoScooter.idMezzo, "è stato assegnato all'utente:", utente1.nome, utente1.cognome);
+milanoScooter.assegnaUtente(utente3);
 //===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
 utente2.prenotaMezzo(milanoMono);
-// Quando viene eseguito lo snippet, console log ritorna il messaggio "non disponibile" impostato nel metodo "prenotaMezzo"
-//=====CHIAMO LA FUNZIONE PER ESEGUIRE IL CONTROLLO SU CIASCUNA CITTÀ =====
-stampaMezzi(milano);
-stampaMezzi(roma);
+console.log("l'utente", milanoMono.idMezzo, "ha prenotato il mezzo:");
+console.log("Il mezzo", milanoMono.idMezzo, "selezionato dall'utente", utente1.nome, ",", utente1.cognome, "è già", milanoMono.stato, "scegliere un mezzo alternativo");
+/* console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato"); */
+/* console.log("il mezzo:", mezzo, "è", mezzo.stato); */ 
 //# sourceMappingURL=test.js.map

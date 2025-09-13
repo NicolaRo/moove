@@ -21,15 +21,7 @@ export class Mezzo {
     assegnaUtente(Utente) {
         // Il mezzo è "disponibile" di default. 
         if (this.stato === Stato.disponibile) {
-            /* console.log ("Stato del mezzo:",this.stato) */
-            // Quando viene assegnato ad un Utente cambia la disponibilità.
             this.stato = Stato.inUso;
-            console.log("è stato assegnato", Utente, "al mezzo", this.idMezzo);
-            console.log("Il mezzo", this.idMezzo, "è attualmente", this.stato);
-        }
-        else {
-            // Nel caso il mezzo scelto non sia disponibile, viene notificato il suo stato attuale.
-            console.log("Il mezzo", this.idMezzo, "è attualmente", this.stato);
         }
     }
 }

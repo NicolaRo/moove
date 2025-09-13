@@ -1,5 +1,6 @@
 import { IMezzo, Stato } from "./IMezzo.js";
 import { ICitta } from "./ICitta.js";
+import { utente1 } from "./test.js";
 //================================= CLASSE ===================================
 export interface IUtente {
   nome: string;
@@ -29,19 +30,12 @@ export class Utente implements IUtente {
   }
   prenotaMezzo(mezzo: IMezzo): void {
     if (mezzo.stato === Stato.disponibile) {
-      console.log("il mezzo:", mezzo, "è", mezzo.stato);
+
 // L'Utente prenota il mezzo che è "disponibile" di default.
-      console.log(
-        "l'utente",
-        this.nome,
-        "ha prenotato il mezzo:",
-        mezzo.idMezzo
-      );
-// Il mezzo cambia di stato.      
+// Eseguita la prenotazione, il mezzo cambia di stato.   
+
       mezzo.stato = Stato.inUso;
-      console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato");
     } else {
-      console.log("Il mezzo", mezzo.idMezzo, "è", mezzo.stato);
     }
   }
 }
