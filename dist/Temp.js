@@ -41,7 +41,8 @@ function stampaMezzi(citta) {
     console.log("I mezzi ora disponibili nella città di:", citta.nomeCitta, "\n", righe.join("\n"));
 }
 //=== CREO LA CLASSE PER L'UTENTE' ===
-// Creo una classe parametrizzata per implementare le caratteristiche delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
+// Creo una classe parametrizzata per implementare le caratteristiche
+// delle interfacce dei diversi mezzi (che verranno assegnati quando creo le variabili dedicate)
 class Utente {
     constructor(nome, cognome, email, metodoPagamento) {
         this.nome = nome;
@@ -51,17 +52,22 @@ class Utente {
     }
     prenotaMezzo(mezzo) {
         if (mezzo.stato === Stato.disponibile) {
-            /* mezzo.stato = Stato.inUso; */
+            // Caso successo: assegno il mezzo
             mezzo.assegnaUtente(this);
+            // Messaggi di successo
+            console.log(`Il cliente ${this.nome} ${this.cognome} ha prenotato il mezzo ${mezzo.idMezzo}`);
+            console.log(`Il mezzo ${mezzo.idMezzo} è stato assegnato all'utente ${this.nome} ${this.cognome}`);
+            console.log(`Il mezzo ${mezzo.idMezzo} è attualmente ${mezzo.stato}`);
         }
         else {
-            console.log(`Il mezzo ${mezzo.idMezzo} che si vuole prenotare è attualmente ${mezzo.stato} presso altro utente, prego scegliere un mezzo disponibile.`);
+            // Caso errore: mezzo non disponibile
+            console.log(`L'utente ${this.nome} ${this.cognome} vuole prenotare: ${mezzo.idMezzo}. Questo mezzo non è disponibile, si prega di scegliere un altro mezzo.`);
         }
     }
 }
 //=== CREO L'UTENTE ===
-let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
-let utente2 = new Utente("Francesco", "Gallo", "f.gallo@email.com", "paypal");
+let utente1 = new Utente("Carla", "Brusco", "carla@email.com", "carta di credito");
+let utente2 = new Utente("Francesco", "Rossi", "f.ossi@email.com", "paypal");
 let utente3 = new Utente("Giovanni", "Renesto", "gionesto@email.com", "apple pay");
 console.log("gli utenti:", utente1.nome, utente1.cognome, ",", utente2.nome, utente2.cognome, ",", utente3.nome, utente3.cognome, "sono stati aggiunti");
 // === CREO LA CLASSE PER LE CITTÁ ===
@@ -219,7 +225,9 @@ let parmaMono = new Mezzo("monopattino");
 parma.aggiungiMezzo(parmaBici);
 parma.aggiungiMezzo(parmaScooter);
 parma.aggiungiMezzo(parmaMono);
-console.log("Moove è presente a", milano.nomeCitta, "con questi mezzi:\n", milano.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", roma.nomeCitta, "con questi mezzi:\n", roma.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", torino.nomeCitta, "con questi mezzi:\n", torino.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", napoli.nomeCitta, "con questi mezzi:\n", napoli.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", firenze.nomeCitta, "con questi mezzi:\n", firenze.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", parma.nomeCitta, "con questi mezzi:\n", parma.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", bologna.nomeCitta, "con questi mezzi:\n", bologna.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", ferrara.nomeCitta, "con questi mezzi:\n", ferrara.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", venezia.nomeCitta, "con questi mezzi:\n", venezia.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", verona.nomeCitta, "con questi mezzi:\n", verona.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", genova.nomeCitta, "con questi mezzi:\n", genova.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", palermo.nomeCitta, "con questi mezzi:\n", palermo.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", catania.nomeCitta, "con questi mezzi:\n", catania.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", bari.nomeCitta, "con questi mezzi:\n", bari.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", lecce.nomeCitta, "con questi mezzi:\n", lecce.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", ancona.nomeCitta, "con questi mezzi:\n", ancona.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", perugia.nomeCitta, "con questi mezzi:\n", ancona.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", perugia.nomeCitta, "con questi mezzi:\n", perugia.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", pescara.nomeCitta, "con questi mezzi:\n", pescara.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", trento.nomeCitta, "con questi mezzi:\n", trento.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", bolzano.nomeCitta, "con questi mezzi:\n", bolzano.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",");
+console.log("Moove è presente a", milano.nomeCitta, "con questi mezzi:\n", milano.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", roma.nomeCitta, "con questi mezzi:\n", roma.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", torino.nomeCitta, "con questi mezzi:\n", torino.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", napoli.nomeCitta, "con questi mezzi:\n", napoli.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", firenze.nomeCitta, "con questi mezzi:\n", firenze.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", parma.nomeCitta, "con questi mezzi:\n", parma.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", bologna.nomeCitta, "con questi mezzi:\n", bologna.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", ferrara.nomeCitta, "con questi mezzi:\n", ferrara.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", (venezia.nomeCitta,
+    "con questi mezzi:\n",
+    venezia.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n")), ",", verona.nomeCitta, "con questi mezzi:\n", verona.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", genova.nomeCitta, "con questi mezzi:\n", genova.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", palermo.nomeCitta, "con questi mezzi:\n", palermo.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", catania.nomeCitta, "con questi mezzi:\n", catania.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", bari.nomeCitta, "con questi mezzi:\n", bari.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", lecce.nomeCitta, "con questi mezzi:\n", lecce.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", ancona.nomeCitta, "con questi mezzi:\n", ancona.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", perugia.nomeCitta, "con questi mezzi:\n", ancona.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", pescara.nomeCitta, "con questi mezzi:\n", pescara.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", trento.nomeCitta, "con questi mezzi:\n", trento.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",", bolzano.nomeCitta, "con questi mezzi:\n", bolzano.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",");
 //=== TEST AGGIUNGO UN MEZZO AD UNA CITTÀ ===
 console.log("Il mezzo:", (() => {
     const m = new Mezzo("bicicletta");
@@ -228,22 +236,10 @@ console.log("Il mezzo:", (() => {
 })(), "è stato aggiunto alla città di:", milano.nomeCitta);
 // Verifico la disponibilità dei mezzi aggiornata
 milano.mezziDisponibili;
-console.log("I mezzi ora assegnatti alla città di:", milano.nomeCitta, "con questi mezzi:\n", milano.mezziDisponibili.map(m => `${m.idMezzo} - ${m.stato}`).join("\n"), ",");
+console.log("I mezzi ora assegnatti alla città di:", milano.nomeCitta, "con questi mezzi:\n", milano.mezziDisponibili.map((m) => `${m.idMezzo} - ${m.stato}`).join("\n"), ",");
 //=== TEST PRENOTAZIONE MEZZO PER UN UTENTE ===
 // Utente 1 prenota il mezzo..
 utente1.prenotaMezzo(ferraraBici);
-// Se il mezzo è disponibile cambierà di stato e verrà assegnato all'utente.
-if (ferraraBici.stato === Stato.inUso) {
-    console.log(`Il cliente ${utente1.nome} ${utente1.cognome} ha prenotato il mezzo ${ferraraBici.idMezzo}`);
-    console.log(`Il mezzo ${ferraraBici.idMezzo} è stato assegnato all'utente ${utente1.nome} ${utente1.cognome}`);
-    console.log(`Il mezzo', ${ferraraBici.idMezzo} "è attualmente", ${ferraraBici.stato}`);
-}
-else {
-    console.log(`L'utente:
-    ${utente2.nome}, ${utente2.cognome},
-    vuole prenotare: ${ferraraBici.idMezzo}.
-    Questo mezzo non è disponibile, si prega di scegliere un altro mezzo.`);
-}
 //=== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE ===
 // Utente 2 vuole prenotare lo stesso mezzo..
 utente2.prenotaMezzo(ferraraBici);
