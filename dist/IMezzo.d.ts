@@ -1,4 +1,4 @@
-import { Utente } from "./IUtente.js";
+import { IUtente } from "./IUtente.js";
 export declare enum Stato {
     disponibile = "disponibile",
     inUso = "In uso"
@@ -7,6 +7,7 @@ export interface IMezzo {
     tipoMezzo: string;
     idMezzo: string;
     stato: Stato;
+    assegnaUtente(utente: IUtente): void;
 }
 export declare class Mezzo implements IMezzo {
     tipoMezzo: string;
@@ -14,6 +15,6 @@ export declare class Mezzo implements IMezzo {
     stato: Stato;
     private static contatore;
     constructor(tipo: string);
-    assegnaUtente(Utente: Utente): void;
+    assegnaUtente(Utente: IUtente): void;
 }
 //# sourceMappingURL=IMezzo.d.ts.map

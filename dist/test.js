@@ -1,5 +1,7 @@
 //======================== TEST =======================================
 //Verifico la corretta implementazione delle classe e delle interfacce
+//===== IMPORTO LE INTERFACCE DAGLI ALTRI FILES =====
+import { Stato } from "./IMezzo.js";
 import { Utente } from "./IUtente.js";
 import { Mezzo } from "./IMezzo.js";
 // ===== IMPORTO LE CITTÁ =====
@@ -8,7 +10,7 @@ import { milano, roma, torino, napoli, firenze, bologna, venezia, verona, genova
 export let utente1 = new Utente("Mario", "Rossi", "mario@email.com", "carta di credito");
 export let utente2 = new Utente("Francesco", "Gallo", "f.gallo@email.com", "paypal");
 export let utente3 = new Utente("Giovanni", "Renesto", "gionesto@email.com", "apple pay");
-console.log("gli utenti:", utente1, ",", utente2, ",", utente3, "sono stati aggiunti");
+console.log("gli utenti:", utente1.nome, utente1.cognome, ",", utente2.nome, utente2.cognome, ",", utente3.nome, utente3.cognome, "sono stati aggiunti");
 //===== CREO I MEZZI =====
 export let bicicletta = new Mezzo("bicicletta");
 export let monopattino = new Mezzo("monopattino");
@@ -151,7 +153,7 @@ let parmaMono = new Mezzo("monopattino");
 parma.aggiungiMezzo(parmaBici);
 parma.aggiungiMezzo(parmaScooter);
 parma.aggiungiMezzo(parmaMono);
-console.log("Moove è presente disponibile a:", (milano.nomeCitta), "con questi mezzi:", (milano.mezziDisponibili), (roma.nomeCitta), "con questi mezzi:", (roma.mezziDisponibili), (torino.nomeCitta), "con questi mezzi:", (torino.mezziDisponibili), (napoli.nomeCitta), "con questi mezzi:", (napoli.mezziDisponibili), (firenze.nomeCitta), "con questi mezzi:", (firenze.mezziDisponibili), (parma.nomeCitta), "con questi mezzi:", (parma.mezziDisponibili), (bologna.nomeCitta), "con questi mezzi:", (bologna.mezziDisponibili), (ferrara.nomeCitta), "con questi mezzi:", (ferrara.mezziDisponibili), (venezia.nomeCitta), "con questi mezzi:", (venezia.mezziDisponibili), (verona.nomeCitta), "con questi mezzi:", (verona.mezziDisponibili), (genova.nomeCitta), "con questi mezzi:", (genova.mezziDisponibili), (palermo.nomeCitta), "con questi mezzi:", (palermo.mezziDisponibili), (catania.nomeCitta), "con questi mezzi:", (catania.mezziDisponibili), (bari.nomeCitta), "con questi mezzi:", (bari.mezziDisponibili), (lecce.nomeCitta), "con questi mezzi:", (lecce.mezziDisponibili), (ancona.nomeCitta), "con questi mezzi:", (ancona.mezziDisponibili), (perugia.nomeCitta), "con questi mezzi:", (perugia.mezziDisponibili), (pescara.nomeCitta), "con questi mezzi:", (pescara.mezziDisponibili), (trento.nomeCitta), "con questi mezzi:", (trento.mezziDisponibili), (bolzano.nomeCitta), "con questi mezzi:", (bolzano.mezziDisponibili), "sono state create correttamente");
+console.log("Moove è presente disponibile a:", (milano.nomeCitta), "con questi mezzi:", (milano.mezziDisponibili), (roma.nomeCitta), "con questi mezzi:", (roma.mezziDisponibili), (torino.nomeCitta), "con questi mezzi:", (torino.mezziDisponibili), (napoli.nomeCitta), "con questi mezzi:", (napoli.mezziDisponibili), (firenze.nomeCitta), "con questi mezzi:", (firenze.mezziDisponibili), (parma.nomeCitta), "con questi mezzi:", (parma.mezziDisponibili), (bologna.nomeCitta), "con questi mezzi:", (bologna.mezziDisponibili), (ferrara.nomeCitta), "con questi mezzi:", (ferrara.mezziDisponibili), (venezia.nomeCitta), "con questi mezzi:", (venezia.mezziDisponibili), (verona.nomeCitta), "con questi mezzi:", (verona.mezziDisponibili), (genova.nomeCitta), "con questi mezzi:", (genova.mezziDisponibili), (palermo.nomeCitta), "con questi mezzi:", (palermo.mezziDisponibili), (catania.nomeCitta), "con questi mezzi:", (catania.mezziDisponibili), (bari.nomeCitta), "con questi mezzi:", (bari.mezziDisponibili), (lecce.nomeCitta), "con questi mezzi:", (lecce.mezziDisponibili), (ancona.nomeCitta), "con questi mezzi:", (ancona.mezziDisponibili), (perugia.nomeCitta), "con questi mezzi:", (perugia.mezziDisponibili), (pescara.nomeCitta), "con questi mezzi:", (pescara.mezziDisponibili), (trento.nomeCitta), "con questi mezzi:", (trento.mezziDisponibili), (bolzano.nomeCitta), "con questi mezzi:", (bolzano.mezziDisponibili));
 //===== TEST AGGIUNGO UN MEZZO AD UNA CITTÀ =====
 console.log("Il mezzo:", (() => {
     const m = new Mezzo("bicicletta");
@@ -160,18 +162,20 @@ console.log("Il mezzo:", (() => {
 })(), "è stato aggiunto alla città di:", milano.nomeCitta);
 // Verifico la disponibilità dei mezzi aggiornata
 milano.mezziDisponibili;
-console.log("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
+console.log("I mezzi ora assegnati alla città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
 //===== TEST PRENOTAZIONE MEZZO PER UN UTENTE =====
-utente1.prenotaMezzo(milanoMono);
-console.log("Il cliente", utente1.nome, "ha prenotato il mezzo:", milanoMono.idMezzo);
-//===== TEST ASSEGNAZIONE UTENTE =====
-milanoScooter.assegnaUtente(utente1);
-console.log("Il mezzo:", milanoScooter.idMezzo, "è stato assegnato all'utente:", utente1.nome, utente1.cognome);
-milanoScooter.assegnaUtente(utente3);
-//===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
-utente2.prenotaMezzo(milanoMono);
-console.log("l'utente", milanoMono.idMezzo, "ha prenotato il mezzo:");
-console.log("Il mezzo", milanoMono.idMezzo, "selezionato dall'utente", utente1.nome, ",", utente1.cognome, "è già", milanoMono.stato, "scegliere un mezzo alternativo");
-/* console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato"); */
-/* console.log("il mezzo:", mezzo, "è", mezzo.stato); */ 
+// Utente 1 prenota il mezzo..
+utente1.prenotaMezzo(ferraraBici);
+/* //===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
+// Utente 2 vuole prenotare lo stesso mezzo..
+utente2.prenotaMezzo(ferraraBici); */
+// Se il mezzo è disponibile cambierà di stato e verrà assegnato all'utente.
+if (ferraraBici.stato === Stato.inUso) {
+    console.log(`Il cliente ${utente1.nome} ${utente1.cognome} ha prenotato il mezzo ${ferraraBici.idMezzo}`);
+    console.log(`Il mezzo ${ferraraBici.idMezzo} è stato assegnato all'utente ${utente1.nome} ${utente1.cognome}`);
+    console.log(`Il mezzo', ${ferraraBici.idMezzo} "è attualmente", ${ferraraBici.stato}`);
+}
+else {
+    console.log(`Il mezzo ${ferraraBici.idMezzo} non è disponibile, scegliere un altro mezzo.`);
+}
 //# sourceMappingURL=test.js.map

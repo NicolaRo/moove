@@ -30,12 +30,9 @@ export class Utente implements IUtente {
   }
   prenotaMezzo(mezzo: IMezzo): void {
     if (mezzo.stato === Stato.disponibile) {
-
-// L'Utente prenota il mezzo che è "disponibile" di default.
-// Eseguita la prenotazione, il mezzo cambia di stato.   
-
       mezzo.stato = Stato.inUso;
-    } else {
+      mezzo.assegnaUtente(this); 
     }
+    
   }
 }

@@ -10,11 +10,8 @@ export class Utente {
     }
     prenotaMezzo(mezzo) {
         if (mezzo.stato === Stato.disponibile) {
-            // L'Utente prenota il mezzo che è "disponibile" di default.
-            // Eseguita la prenotazione, il mezzo cambia di stato.   
             mezzo.stato = Stato.inUso;
-        }
-        else {
+            mezzo.assegnaUtente(this);
         }
     }
 }

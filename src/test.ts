@@ -58,11 +58,11 @@ export let utente1 = new Utente(
     "apple pay"
   );
   console.log("gli utenti:", 
-    utente1,",",
-    utente2,",",
-    utente3,
-    "sono stati aggiunti");
-  
+    utente1.nome, utente1.cognome, ",",
+    utente2.nome, utente2.cognome, ",",
+    utente3.nome, utente3.cognome,
+    "sono stati aggiunti"
+  ); 
 
 //===== CREO I MEZZI =====
 export let bicicletta = new Mezzo("bicicletta");
@@ -255,8 +255,8 @@ console.log(
     (perugia.nomeCitta), "con questi mezzi:", (perugia.mezziDisponibili),
     (pescara.nomeCitta), "con questi mezzi:", (pescara.mezziDisponibili),
     (trento.nomeCitta), "con questi mezzi:", (trento.mezziDisponibili),
-    (bolzano.nomeCitta), "con questi mezzi:", (bolzano.mezziDisponibili),,
-    "sono state create correttamente"); 
+    (bolzano.nomeCitta), "con questi mezzi:", (bolzano.mezziDisponibili)
+); 
    
 //===== TEST AGGIUNGO UN MEZZO AD UNA CITTÀ =====
 
@@ -272,41 +272,22 @@ console.log(
 // Verifico la disponibilità dei mezzi aggiornata
 
 milano.mezziDisponibili;
-console.log ("I mezzi ora disponibili nella città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
+console.log ("I mezzi ora assegnati alla città di:", milano.nomeCitta, "sono:", milano.mezziDisponibili);
 
 //===== TEST PRENOTAZIONE MEZZO PER UN UTENTE =====
+// Utente 1 prenota il mezzo..
+utente1.prenotaMezzo(ferraraBici);
 
-utente1.prenotaMezzo(milanoMono);
+/* //===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
+// Utente 2 vuole prenotare lo stesso mezzo..
+utente2.prenotaMezzo(ferraraBici); */
 
-console.log("Il cliente",
-    utente1.nome,
-    "ha prenotato il mezzo:",
-    milanoMono.idMezzo
-);
+// Se il mezzo è disponibile cambierà di stato e verrà assegnato all'utente.
+if (ferraraBici.stato === Stato.inUso) {
+  console.log(`Il cliente ${utente1.nome} ${utente1.cognome} ha prenotato il mezzo ${ferraraBici.idMezzo}`);
+  console.log(`Il mezzo ${ferraraBici.idMezzo} è stato assegnato all'utente ${utente1.nome} ${utente1.cognome}`);
+  console.log(`Il mezzo', ${ferraraBici.idMezzo} "è attualmente", ${ferraraBici.stato}`);
+} else {
+  console.log(`Il mezzo ${ferraraBici.idMezzo} non è disponibile, scegliere un altro mezzo.`);
+}
 
-//===== TEST ASSEGNAZIONE UTENTE =====
-
-milanoScooter.assegnaUtente(utente1)
-
-console.log(
-    "Il mezzo:", milanoScooter.idMezzo,
-    "è stato assegnato all'utente:", utente1.nome, utente1.cognome
-);
-
-milanoScooter.assegnaUtente(utente3)
-
-
-//===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
-utente2.prenotaMezzo(milanoMono)
-
-console.log(
-    "l'utente",
-
-    milanoMono.idMezzo,
-    "ha prenotato il mezzo:",
-);
-
-console.log(
-    "Il mezzo", milanoMono.idMezzo, "selezionato dall'utente", utente1.nome, ",", utente1.cognome, "è già", milanoMono.stato, "scegliere un mezzo alternativo");
-/* console.log("Il mezzo", mezzo.idMezzo, "è stato prenotato"); */
-/* console.log("il mezzo:", mezzo, "è", mezzo.stato); */

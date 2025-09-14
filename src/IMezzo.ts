@@ -1,5 +1,5 @@
 //======================== IMPORTO LE INTERFACCE ESTERNE =======================================
-import { Utente } from "./IUtente.js";
+import { IUtente } from "./IUtente.js";
 
 //===== DICHIARO ENUM =======
 //Assegnando diversi valori alla proprietà "stato" sarà più semplice integrare altri valori in futuro.
@@ -13,10 +13,12 @@ export enum Stato {
 //======================== INTERFACCIA =======================================
 // Definisco l'interfaccia IMezzo per gestire i diversi mezzi noleggiabili.
 //Elenco le proprietà di ciascun mezzo (quelle proprie e condivise da tutti i mezzi).
+
 export interface IMezzo {
   tipoMezzo: string; // "bici", "scooter", "monopattino".
   idMezzo: string; // ID univoco formato da numero progressivo + tipo di mezzo.
   stato: Stato; // Prende il valore assegnato dentro all'enum.
+  assegnaUtente(utente: IUtente): void;
 }
 
 //================================= CLASSE ===================================
@@ -35,7 +37,7 @@ export class Mezzo implements IMezzo {
     this.stato = Stato.disponibile;
   }
 // ===================== ASSEGNO UN MEZZO A CIASCUN UTENTE =====================
-  assegnaUtente(Utente: Utente): void {
+  assegnaUtente(Utente: IUtente): void {
 // Il mezzo è "disponibile" di default. 
     if (this.stato === Stato.disponibile) {
       this.stato = Stato.inUso;
