@@ -13,6 +13,9 @@ export class Utente {
             mezzo.stato = Stato.inUso;
             mezzo.assegnaUtente(this);
         }
+        else {
+            console.log(`Il mezzo ${mezzo.idMezzo} che si vuole prenotare è attualmente ${mezzo.stato} presso altro utente, prego scegliere un mezzo disponibile.`);
+        }
     }
 }
 //# sourceMappingURL=IUtente.js.map

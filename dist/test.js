@@ -166,9 +166,6 @@ console.log("I mezzi ora assegnati alla città di:", milano.nomeCitta, "sono:", 
 //===== TEST PRENOTAZIONE MEZZO PER UN UTENTE =====
 // Utente 1 prenota il mezzo..
 utente1.prenotaMezzo(ferraraBici);
-/* //===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
-// Utente 2 vuole prenotare lo stesso mezzo..
-utente2.prenotaMezzo(ferraraBici); */
 // Se il mezzo è disponibile cambierà di stato e verrà assegnato all'utente.
 if (ferraraBici.stato === Stato.inUso) {
     console.log(`Il cliente ${utente1.nome} ${utente1.cognome} ha prenotato il mezzo ${ferraraBici.idMezzo}`);
@@ -176,6 +173,12 @@ if (ferraraBici.stato === Stato.inUso) {
     console.log(`Il mezzo', ${ferraraBici.idMezzo} "è attualmente", ${ferraraBici.stato}`);
 }
 else {
-    console.log(`Il mezzo ${ferraraBici.idMezzo} non è disponibile, scegliere un altro mezzo.`);
+    console.log(`L'utente:
+    ${utente2.nome}, ${utente2.cognome},
+    vuole prenotare: ${ferraraBici.idMezzo}.
+    Questo mezzo non è disponibile, si prega di scegliere un altro mezzo.`);
 }
+//===== TEST PRENOTAZIONE SU MEZZO NON DISPONIBILE =====
+// Utente 2 vuole prenotare lo stesso mezzo..
+utente2.prenotaMezzo(ferraraBici);
 //# sourceMappingURL=test.js.map
