@@ -1,7 +1,7 @@
 # Moove - Partial 🚧  
 Micromobility webapp  
 
-![Moove Screenshot]
+**📸 MOOVE Screenshot:**
 <img width="2880" height="1800" alt="Screenshot 2025-09-14 alle 17 39 41" src="https://github.com/user-attachments/assets/29a5b429-31e9-441d-911b-26537a1d3a44" />
 
 ---
