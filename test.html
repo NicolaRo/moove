@@ -9,11 +9,34 @@
 </head>
 <body>
     <header>
-        <h1>Moove - mvp 🚧</h1>
+        <h1>Moove - Partial 🚧</h1>
         <h2>micromobility webapp</h2>
     </header>
     <section instructions>
-        <h3>Instructions</h3>
-    </section>
+        <h3>🚀 Instructions</h3>
+        <h4>How to test the webapp logic:</h4>
+      
+        <p>As you’re reading this, you probably already cloned this repo — make sure you’re working on <strong>your local copy</strong>.</p>
+      
+        <p>👉 Open your browser’s developer tools and head to the <strong>Console</strong> tab.</p>
+      
+        <p>🖥️ With your code editor running, you can trigger a booking by calling:</p>
+      
+        <p style="font-family: 'Courier New', Courier, monospace;">
+          <strong>utente2.prenotaMezzo(ferraraBici);</strong>
+        </p>
+      
+        <p><strong>utente</strong> 👤 is any user picked from the pool — just change the number (<code>utente1</code>, <code>utente2</code>, <code>utente3</code>).</p>
+
+        <p> <code> ferraraBici </code> instead is referring to the city transport pool, in this case was chosen <strong>Ferrara</strong> as a city, and <strong>Bici</strong> = "Bicicletta" in Italian 🇮🇹 or Bike in English 🇬🇧</p>
+      
+        <p><code>.prenotaMezzo</code> 🛠️ is the method that checks for existing reservations and:</p>
+        <ul>
+          <li>✅ Books the selected transport if available</li>
+          <li>⚠️ Displays an <strong>unavailability warning</strong> if the vehicle is already in use</li>
+        </ul>
+      
+        <p>If the chosen vehicle is free, it will be <strong>automatically set to <em>"in uso"</em></strong> 🚴 — meaning it’s no longer available for others.</p>
+      </section>
 </body>
 </html>
